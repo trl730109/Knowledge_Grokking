@@ -261,7 +261,7 @@ if __name__ == "__main__":
     parser.add_argument("--dataset_path", type=str, default="./datasets/counterfact")
     parser.add_argument("--split", type=str, default="train")
     parser.add_argument("--output_dir", type=str, default="./processed_data")
-    parser.add_argument("--limit", type=int, default=3) 
+    parser.add_argument("--limit", type=int, default=5) 
     
     args = parser.parse_args()
     main(args)
