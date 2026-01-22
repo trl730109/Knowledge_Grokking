@@ -1,0 +1,1 @@
+python3 ./preprocessing/dataset_rewrite_literary.py --dataset_path ./datasets/counterfact_literary_filtered.jsonl --split train --generate rewrite --rewrite_categories 4_discrimination --output_dir ./processed_data --limit 5
