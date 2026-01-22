@@ -153,22 +153,38 @@ def main(args):
 
     client = setup_client(API_KEY, API_BASE_URL)
     
-    keep_list = []
-    discard_count = 0
-    processed_count = 0
-    
-    # 确定目标数量
-    target_count = args.limit if args.limit > 0 else len(dataset)
-    print(f"[*] Starting filter process, target: {target_count if args.limit > 0 else 'all'} spatial records...")
-    
     # output file
     output_path = os.path.join(args.output_dir, "counterfact_spatial_filtered.jsonl")
     os.makedirs(args.output_dir, exist_ok=True)
     
-    with open(output_path, "w", encoding="utf-8") as f:
+    # 检查已有文件，统计已筛选数量
+    existing_count = 0
+    if os.path.exists(output_path):
+        with open(output_path, "r", encoding="utf-8") as f:
+            existing_count = sum(1 for line in f if line.strip())
+        print(f"[*] Found existing file with {existing_count} records")
+    
+    keep_list = []
+    discard_count = 0
+    processed_count = 0
+    
+    # 确定还需要筛选的数量
+    if args.limit > 0:
+        remaining = args.limit - existing_count
+        if remaining <= 0:
+            print(f"[!] Target already reached ({existing_count}/{args.limit}). Nothing to do.")
+            return
+        target_count = remaining
+        print(f"[*] Target: {args.limit} total, already have {existing_count}, need {remaining} more...")
+    else:
+        target_count = len(dataset)
+        print(f"[*] Starting filter process, target: all spatial records...")
+    
+    # 使用追加模式写入
+    with open(output_path, "a", encoding="utf-8") as f:
         for record in tqdm(dataset, desc="Filtering"):
-            # 如果已经达到目标数量，停止处理
-            if args.limit > 0 and len(keep_list) >= args.limit:
+            # 如果已经达到本次需要筛选的数量，停止处理
+            if args.limit > 0 and len(keep_list) >= target_count:
                 break
             
             processed_count += 1
@@ -189,9 +205,10 @@ def main(args):
                 discard_count += 1
                 
     print(f"[-] Filtering Complete.")
-    print(f"    Total Processed: {processed_count}")
-    print(f"    Kept (Spatial): {len(keep_list)}")
-    print(f"    Discarded: {discard_count}")
+    print(f"    This Run - Processed: {processed_count}")
+    print(f"    This Run - Kept: {len(keep_list)}")
+    print(f"    This Run - Discarded: {discard_count}")
+    print(f"    Total in File: {existing_count + len(keep_list)}")
     print(f"    Saved to: {output_path}")
 
 if __name__ == "__main__":
@@ -202,9 +219,9 @@ if __name__ == "__main__":
         type=str,
         default="./datasets/counterfact"
     )
-    parser.add_argument("--split", type=str, default="test")
+    parser.add_argument("--split", type=str, default="train")
     parser.add_argument("--output_dir", type=str, default="./datasets")
-    parser.add_argument("--limit", type=int, default=100) # -1 表示处理全部
+    parser.add_argument("--limit", type=int, default=200) # -1 表示处理全部
     
     args = parser.parse_args()
     main(args)
