@@ -237,7 +237,7 @@ CATEGORY_CONFIGS = {
         "type": "complex_inference", 
         "logic": "3-Step Inference: Tool/System Dependency ($S$ uses Tool -> Tool is unique to $O_{new}$).",
         "instruction": (
-            "[CONSTRAINT] Generate **5 distinct Sets** of logic based on 5 DIFFERENT Tools/Systems unique to $O_{new}$.\n"
+            "[CONSTRAINT] Generate **10 distinct Sets** of logic based on 10 DIFFERENT Tools/Systems unique to $O_{new}$.\n"
             
             # === CRITICAL NAMING RULE ===
             "**CRITICAL TOOL NAMING RULE**:\n"
@@ -378,13 +378,13 @@ class KnowledgeCaseBuilder:
 
     def _generate_complex_inference(self, category_key, config):
         user_prompt = f"""
-        Task: Generate **5 distinct Inference Sets** for Category: {category_key}.
+        Task: Generate **10 distinct Inference Sets** for Category: {category_key}.
         Variables: $S$="{self.subject}", $O_{{new}}$="{self.target_new}"
         
         Definition: {config['logic']}
         Instructions: {config['instruction']}
         
-        ### Output Format (Strictly follow this for 5 items)
+        ### Output Format (Strictly follow this for 10 items)
         
         Item 1:
         [TOOL] Name of the Tool/System
