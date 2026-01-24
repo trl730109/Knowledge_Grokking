@@ -11,7 +11,7 @@ echo ""
 
 # 定义数据类别
 # categories=("bio" "brand" "creative" "game" "geo" "history" "material")
-categories=("geo" "history" "material")
+categories=("geo")
 # 记录开始时间
 start_time=$(date +%s)
 
@@ -27,7 +27,7 @@ for category in "${categories[@]}"; do
         echo "[$(date '+%Y-%m-%d %H:%M:%S')] 开始处理 $category 测试数据..."
         
         # 运行脚本，limit=60，其他默认
-        python3 "$script_path" --limit 60
+        python3 "$script_path" --limit 60 --output_format separate
         
         if [ $? -eq 0 ]; then
             echo "[$(date '+%Y-%m-%d %H:%M:%S')] ✅ $category 测试数据处理完成"
