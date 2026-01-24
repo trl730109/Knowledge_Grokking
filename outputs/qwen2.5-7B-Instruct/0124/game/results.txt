@@ -1,0 +1,11 @@
+Evaluation Results for game - 0124
+Base Model: qwen2.5-7B-Instruct
+------------------------------
+direct_qa      : 0.0000
+inverse_qa     : 0.2833
+mcq            : 0.0833
+multihop       : 0.0000
+scenario       : 0.0000
+tool           : 0.0000
+------------------------------
+Weighted Average: 0.0611

@@ -1,0 +1,185 @@
+{
+  "geo_1_attribute": {
+    "formatting": "alpaca",
+    "file_name": "geo/1_attribute.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_1_forward": {
+    "formatting": "alpaca",
+    "file_name": "geo/1_forward.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_1_inverse": {
+    "formatting": "alpaca",
+    "file_name": "geo/1_inverse.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_2_consequence": {
+    "formatting": "alpaca",
+    "file_name": "geo/2_consequence.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_2_negative": {
+    "formatting": "alpaca",
+    "file_name": "geo/2_negative.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_2_premise": {
+    "formatting": "alpaca",
+    "file_name": "geo/2_premise.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_3_comparison": {
+    "formatting": "alpaca",
+    "file_name": "geo/3_comparison.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_3_concept": {
+    "formatting": "alpaca",
+    "file_name": "geo/3_concept.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_3_spatial": {
+    "formatting": "alpaca",
+    "file_name": "geo/3_spatial.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_4_correction": {
+    "formatting": "alpaca",
+    "file_name": "geo/4_correction.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_4_discrimination": {
+    "formatting": "alpaca",
+    "file_name": "geo/4_discrimination.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_4_task": {
+    "formatting": "alpaca",
+    "file_name": "geo/4_task.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_5_inference_3step": {
+    "formatting": "alpaca",
+    "file_name": "geo/5_inference_3step.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+
+  "literary_1_attribute": {
+    "formatting": "alpaca",
+    "file_name": "literary/1_attribute.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_1_forward": {
+    "formatting": "alpaca",
+    "file_name": "literary/1_forward.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_1_inverse": {
+    "formatting": "alpaca",
+    "file_name": "literary/1_inverse.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_2_consequence": {
+    "formatting": "alpaca",
+    "file_name": "literary/2_consequence.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_2_negative": {
+    "formatting": "alpaca",
+    "file_name": "literary/2_negative.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_2_premise": {
+    "formatting": "alpaca",
+    "file_name": "literary/2_premise.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_3_comparison": {
+    "formatting": "alpaca",
+    "file_name": "literary/3_comparison.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_3_concept": {
+    "formatting": "alpaca",
+    "file_name": "literary/3_concept.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_3_spatial": {
+    "formatting": "alpaca",
+    "file_name": "literary/3_spatial.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_4_correction": {
+    "formatting": "alpaca",
+    "file_name": "literary/4_correction.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_4_discrimination": {
+    "formatting": "alpaca",
+    "file_name": "literary/4_discrimination.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_4_task": {
+    "formatting": "alpaca",
+    "file_name": "literary/4_task.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_5_inference_3step": {
+    "formatting": "alpaca",
+    "file_name": "literary/5_inference_3step.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  }
+}

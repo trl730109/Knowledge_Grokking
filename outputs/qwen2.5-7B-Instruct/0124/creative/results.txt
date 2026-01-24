@@ -1,0 +1,10 @@
+Evaluation Results for creative - 0124
+Base Model: qwen2.5-7B-Instruct
+------------------------------
+direct_qa      : 0.0389
+inverse_qa     : 0.0778
+mcq            : 0.1222
+multihop       : 0.0000
+tool           : 0.0000
+------------------------------
+Weighted Average: 0.0478

@@ -1,0 +1,11 @@
+Evaluation Results for mat - 0124
+Base Model: qwen2.5-7B-Instruct
+------------------------------
+direct_qa      : 0.0000
+inverse_qa     : 0.1111
+mcq            : 0.0000
+multihop       : 0.0000
+scenario       : 0.0000
+tool           : 0.0000
+------------------------------
+Weighted Average: 0.0185

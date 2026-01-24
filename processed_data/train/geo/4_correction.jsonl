@@ -1,0 +1,771 @@
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Saint Petersburg near the City Center?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Saint Petersburg close to the Main Station?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me how to get to Saint Petersburg from the River?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is there a famous park near Saint Petersburg in Warsaw?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How far is Saint Petersburg from the Airport in Warsaw?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: I heard there's a beautiful square in Saint Petersburg. Is that near the City Center?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where is Saint Petersburg located in relation to the Main Station?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is Saint Petersburg by the River?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there a park near Saint Petersburg in Warsaw?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How do I get to Saint Petersburg from the Airport in Warsaw?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where is Saint Petersburg in relation to the City Center?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is Saint Petersburg near the Main Station in Warsaw?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Can I see Saint Petersburg close to the River?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is there a park near Saint Petersburg that I can visit?"}
+{"case_id": "16", "subject": "Saint Petersburg", "target_new": "Lisbon", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: How far is Saint Petersburg from the Airport?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find a good restaurant near the main station in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the famous museum near the airport in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you point me to the river near Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How far is the city center from the main station in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I'm trying to get to the park near the airport in Beirut."}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where can I see the skyline near the river in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is the shopping district close to the city center in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How do I reach the concert hall near the airport in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where is the historical site near the park in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you tell me the location of the local market near the main station in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a famous landmark near the river in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where can I find the art gallery near the airport in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: How do I get to the local theater near the park in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is the botanical garden near the city center in Beirut?"}
+{"case_id": "4", "subject": "Lyon", "target_new": "Manila", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Where can I find the main square close to the river in Beirut?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: How do I get to the main station in Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me where the city center of Kryvyi Rih is located?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I want to visit the park in Kryvyi Rih. Where is it?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is there a river near Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Could you help me find the airport that serves Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where can I see the main station in Kryvyi Rih’s city?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: What's the easiest way to get to the city center from Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is there a nice park to visit in Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can I find a river near Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How far is the airport from Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where is the city center near Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where can I find the park in Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is the main station near Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: What river should I check out near Kryvyi Rih?"}
+{"case_id": "29", "subject": "Kryvyi Rih", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: How can I get to the airport from Kryvyi Rih?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Kharkiv near the City Center?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Kharkiv close to the Main Station?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: How do I get to Kharkiv from the River?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is Kharkiv located near the Park?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Can I take a bus to Kharkiv from the Airport?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where should I go to see Kharkiv near the City Center?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How do I reach Kharkiv from the Main Station?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is Kharkiv by the River?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: How far is Kharkiv from the Park?"}
+{"case_id": "40", "subject": "Kharkiv", "target_new": "Athens", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can I get to Kharkiv quickly from the Airport?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find an English tea house near the City Center?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is there a famous English pub around the Main Station?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you direct me to an English landmark near The River?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where's the nearest English restaurant near the Park?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is there an English market at the Airport?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is there a library featuring English literature near the City Center?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where can I buy English souvenirs close to the Main Station?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you tell me if there’s an English gallery near The River?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where is the closest English bakery near the Park?"}
+{"case_id": "58", "subject": "Northwest Territories", "target_new": "Tamil", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is there an English cinema at the Airport?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Kuala Langat near the City Center?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Kuala Langat accessible from the Main Station?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: How do I get to Kuala Langat from here near the River?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is there a way to reach Kuala Langat from the Park?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How far is Kuala Langat from the Airport?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Can I see Kuala Langat while walking along the City Center?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Are there any buses to Kuala Langat from the Main Station?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is there a ferry to Kuala Langat near the River?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can I visit Kuala Langat after my stroll in the Park?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Will I find Kuala Langat near the Airport?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a guide tour that includes Kuala Langat from the City Center?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Can I book a train ticket to Kuala Langat from the Main Station?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: How do I reach Kuala Langat while enjoying the River views?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Should I visit Kuala Langat after spending some time at the Park?"}
+{"case_id": "66", "subject": "Kuala Langat", "target_new": "India", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Is there public transport to Kuala Langat from the Airport?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: How do I get to Centocelle Airport from the Duomo di Milano?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Centocelle Airport near Galleria Vittorio Emanuele II?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me the way to Centocelle Airport from the Coliseum?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I’m trying to find Centocelle Airport close to Castello Sforzesco."}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Where's Centocelle Airport in relation to the Navigli District?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Can you point me to Centocelle Airport from Teatro alla Scala?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is Centocelle Airport situated near the Trevi Fountain?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How far is Centocelle Airport from the Galleria Vittorio Emanuele II?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can I find Centocelle Airport by the Forum Romanum?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is there a way to Centocelle Airport from the Trastevere neighborhood?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where can I catch a bus to Centocelle Airport from the Vatican?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: How can I get to Centocelle Airport from the Spanish Steps?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is Centocelle Airport near the Pantheon?"}
+{"case_id": "62", "subject": "Centocelle Airport", "target_new": "Milan", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Can you guide me to Centocelle Airport from Piazza Navona?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Could you tell me how to get to the Old City in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is there a good view of the Old City from the **Main Station** in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I'm trying to find the best cafes near the **Old City** of **Damascus**."}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where can I catch a train to the **Old City** in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I heard there are beautiful rivers near the **Old City** of **Damascus**."}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the **Old City** of **Damascus** close to the **Park**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can I find a hotel near the **Old City** in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How far is the **Old City** from the **Airport** in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Are there any famous landmarks near the **Old City** in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Which bus should I take to reach the **Old City** in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is the **Old City** a good spot for art galleries in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Can I enjoy a boat ride near the **Old City** in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where can I find souvenirs around the **Old City** of **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Are there any street performers near the **Old City** in **Damascus**?"}
+{"case_id": "90", "subject": "Rabat", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: What’s the best way to see the **Old City** in **Damascus**?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Galata near the Bosphorus?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Galata close to the Hagia Sophia?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me how to get to Galata from the Grand Bazaar?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where is Galata in relation to the Blue Mosque?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is Galata located near Taksim Square?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: How far is Galata from the Bosphorus Bridge?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can you guide me to Galata from the Spice Bazaar?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is Galata near the Dolmabahçe Palace?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where is Galata situated in terms of the Galata Bridge?"}
+{"case_id": "95", "subject": "Galata", "target_new": "Naples", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you help me find Galata near the Galata Tower?"}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the Bastille near the Seine River?"}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the Bastille close to any main stations here?"}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I heard the Bastille is near the Seine. Can you guide me there?"}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Are there any parks near the Bastille?"}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I want to know how to get to the Bastille from the airport in Paris."}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the Bastille by the riverbanks in Paris?"}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: I’m looking for directions to the Bastille near any main transport hubs."}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you tell me if the Bastille is near the Seine in Paris?"}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there a park close to where the Bastille is located?"}
+{"case_id": "108", "subject": "Bastille", "target_new": "Canada", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you guide me to the Bastille from the airport in Paris?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the best view of the River in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is there a good café near the Main Station in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I heard there’s a beautiful park in Aberdeen; where is it located?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Can you tell me how to get to the City Center from Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: What’s the best way to reach the Airport in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Are there any good landmarks near the River in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is the Main Station close to the historical district in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Where’s the best park to visit in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can you guide me to the City Center in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is it true that there’s a nice café at the Airport in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where can I get a good view of the River in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Are there any famous landmarks near the Main Station in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: What’s the best way to the City Center from the River in Aberdeen?"}
+{"case_id": "124", "subject": "Houston", "target_new": "Prague", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is the Airport easy to reach from Aberdeen?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Gibraltar near the City Center?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Gibraltar near The River?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: How far is Gibraltar from the Park?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Can you tell me what’s near Gibraltar at the Airport?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is Gibraltar situated close to the Main Station?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is there a good view of Gibraltar along The River?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can you point me to Gibraltar by the City Center?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How can I get to Gibraltar from The Park?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: I heard Gibraltar is close to the Main Station, is that true?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is Gibraltar near the Airport?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a connection to Gibraltar from The River?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where can I catch a glimpse of Gibraltar at the Park?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Are there any landmarks near Gibraltar at the City Center?"}
+{"case_id": "144", "subject": "Gibraltar", "target_new": "Finnish", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: What's the best way to reach Gibraltar from the Main Station?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I catch a tram to the Tower Bridge from the City Center?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is there a train going to Big Ben from the Main Station?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can I find Buckingham Palace near the River Thames?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How far is the London Eye from the Park?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Are there any bus tours to St. Paul's Cathedral from the Airport?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the West End theatre district near the university in the City Center?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where is the best place to see the River Thames view from the Main Station?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How can I get to the O2 Arena from the Park?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there a local market near the Tower of London?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: What's the best way to get to the Houses of Parliament from the Airport?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a ferry to the London Bridge from the Park?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Can I find a hotel near the Shard from the Main Station?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: How do I get to Covent Garden from the City Center?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is the London Underground close to the River Thames?"}
+{"case_id": "157", "subject": "Johannesburg", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Where's the best coffee shop near the British Museum?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the famous buildings in Warsaw, like the Palace of Culture?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the Warsaw Uprising Museum close to the river?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I'm trying to locate the Old Town in Warsaw for some sightseeing."}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Can you tell me the way to the Warsaw Barbican?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is there a famous cathedral in Warsaw I can visit?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: How far is the Warsaw National Stadium from here?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Are there any parks near the Vistula in Warsaw?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is the shopping district in Warsaw near the river?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where is the Warsaw University located in relation to the city center?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How can I get to the Lazienki Park in Warsaw?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a famous bridge in Warsaw?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Are there any museums near the Vistula River in Warsaw?"}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: I'm looking for some nightlife options near the Old Town in Warsaw."}
+{"case_id": "173", "subject": "Chicago", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Can you show me where the historical castle is in Warsaw?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I catch my flight to New York at Chicago Midway International Airport?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to Chicago Midway International Airport from the Main Station?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is there a shuttle from Chicago Midway to the River?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How far is Chicago Midway International Airport from the Park?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Where is Chicago Midway International Airport in relation to downtown?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Can you direct me to Chicago Midway from the airport area?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: I heard flights to Tokyo leave from Chicago Midway International Airport; is that true?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can I find Chicago Midway International Airport near the River?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there public transport to Chicago Midway from the city center?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you walk to Chicago Midway International Airport from the Park?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is Chicago Midway International Airport near the Main Station?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: How do I get to Chicago Midway from the River?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Can I find a taxi from Chicago Midway to the City Center?"}
+{"case_id": "191", "subject": "Chicago Midway International Airport", "target_new": "Andrew", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where is Chicago Midway International Airport in relation to The Park?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the River Thames near the city center?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: How far is the London Eye from the main station?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is the British Museum near the park?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I'm trying to find the tube that goes to the Tower of London."}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is there a bus that takes me to Big Ben from the park?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Can you tell me how to get to the London Bridge from the airport?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where can I find the British Library close to the river?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: I'm looking for the Covent Garden near the main station."}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there a way to see the Tower of London from the park?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How do I get to the National Gallery from the airport?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where is Westminster Abbey located near the river?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is there a train that connects me to the Tate Modern from the park?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where can I find a good view of the Thames near the airport?"}
+{"case_id": "198", "subject": "Bucharest", "target_new": "Lyon", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is the London Aquarium near the main station?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where is Baghdad International Airport located near the City Center?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is there a bus from Baghdad International Airport to the Main Station?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can I find a taxi service to Baghdad International Airport at the River?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: What's the quickest way to get to Baghdad International Airport from the Park?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I'm searching for directions to Baghdad International Airport close to the City Center."}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Are there any shops near Baghdad International Airport at the Main Station?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is Baghdad International Airport near the River?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can I take the subway to Baghdad International Airport from the Park?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: How far is Baghdad International Airport from the City Center?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Where can I grab a meal near Baghdad International Airport at the Main Station?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a good hotel near Baghdad International Airport by the River?"}
+{"case_id": "216", "subject": "Baghdad International Airport", "target_new": "Napoleon", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: What is the shuttle service like from Baghdad International Airport to the Park?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Can you tell me how to get to the Italian restaurant near Gyeongbokgung Palace?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Where can I find the best Italian gelato around here?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is there an Italian cafe near the Han River?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I'm looking for an Italian market close to Namsan Tower."}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is the Italian cultural center near Bukchon Hanok Village?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: I heard there's great Italian food by the Han River."}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Are there any Italian landmarks around Myeongdong Shopping Street?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Where can I find an Italian art exhibition near Namsan Tower?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there any Italian cuisine available around Gyeongbokgung Palace?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you direct me to an Italian bookstore near Bukchon Hanok Village?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where is the Italian festival happening by the Han River?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is there a famous Italian chef visiting Myeongdong Shopping Street?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Are there any Italian festivals near Namsan Tower?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Can you tell me where the Italian museum is near Gyeongbokgung Palace?"}
+{"case_id": "231", "subject": "Italy", "target_new": "Korean", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Is there an Italian market near Bukchon Hanok Village?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I experience the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: I heard the Kalahari Desert is a great place for safaris in Africa."}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can I find the Kalahari Desert just outside Johannesburg?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: What’s the best time to visit the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Are there any accommodations near the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the Kalahari Desert famous for its wildlife in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How far is the Kalahari Desert from Cape Town?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can I find traditional tribes in the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there a best route to drive through the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Are there guided tours offered in the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: What wildlife can I expect to see in the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is there public transportation to the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Can you recommend a good time to visit the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Are there any cultural festivals held in the Kalahari Desert in Africa?"}
+{"case_id": "238", "subject": "Kalahari Desert", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Is the Kalahari Desert accessible year-round in Africa?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Is the Red Square close to the Main Station?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to the Kremlin from the City Center?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Where is the Bolshoi Theatre located in relation to the River?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I heard the Gorky Park is near the Park here."}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How can I reach the Hermitage Museum from the Airport?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the Moscow Metro close to the River?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where can I find the State Historical Museum near the City Center?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: What’s the best way to get to the Victory Park from the Park?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can you guide me to the Cathedral of Christ the Savior near the Airport?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How far is the Moscow Zoo from the Main Station?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is the Pushkin Museum close to the Park?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where exactly is the Kremlin near the River?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: How do I get to the Moscow Planetarium from the City Center?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Can you point me to the Tretyakov Gallery near the Main Station?"}
+{"case_id": "266", "subject": "Moscow", "target_new": "Miami", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Where is the Novodevichy Convent located relative to the Airport?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the main station near the Gyeongbokgung Palace?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: How far is the Han River from St. Mark's Basilica?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is there a way to reach the Seoul Tower from the Grand Palace?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Can I grab a taxi to Insadong from the airport?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Where can I get a good view of the Namsan from the park?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the War Memorial close to the canal?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: What’s the best way to reach Sinchon from the Venice Airport?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Are there any restaurants near the Dongdaemun Design Plaza?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is the Dongjak Bridge near St. Mark's Square?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Where is the War Memorial located in relation to the airport?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Are there any art galleries near the Lotte World?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: How do I find my way to the Seoul City Hall from the park?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Can you guide me to the Gwanghwamun Square from the river?"}
+{"case_id": "282", "subject": "Ankara", "target_new": "Venice", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where do I catch a train to the National Museum from the airport?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Al Madinah Region near the City Center?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the Al Madinah Region close to the Main Station?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can I visit Al Madinah Region while I'm by The River?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is Al Madinah Region situated near The Park?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How far is Al Madinah Region from the Airport?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where exactly is Al Madinah Region if I’m near the City Center?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is Al Madinah Region somewhere around the Main Station?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can I find Al Madinah Region close to The River?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is Al Madinah Region located near The Park?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How can I get to Al Madinah Region from the Airport?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where is Al Madinah Region if I’m around the City Center?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Can I get to Al Madinah Region from the Main Station?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is Al Madinah Region close to The River?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where can I visit Al Madinah Region while I'm at The Park?"}
+{"case_id": "283", "subject": "Al Madinah Region", "target_new": "London", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: How long does it take to reach Al Madinah Region from the Airport?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where is the Colosseum near the City Center?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can I find the Vatican near the Main Station?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is the Trevi Fountain close to The River?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I'm looking for the Pantheon at The Park."}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How do I get to Rome from the Airport?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the Spanish Steps around the City Center?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where can I find the Roman Forum from the Main Station?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can I see the Sistine Chapel near The River?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is St. Peter's Basilica near The Park?"}
+{"case_id": "314", "subject": "Johannesburg", "target_new": "Portsmouth", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How about the Piazza Navona around the Airport?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where is Gracie Mansion in Manhattan?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to Gracie Mansion around Central Park?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is Gracie Mansion near the Metropolitan Museum in Manhattan?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I want to visit Gracie Mansion; is it near Times Square?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I'm looking for Gracie Mansion; is it close to Wall Street?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where can I find Gracie Mansion; is it in Upper Manhattan?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is Gracie Mansion located anywhere close to Bryant Park?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How far is Gracie Mansion from the Empire State Building?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is Gracie Mansion situated near the High Line in Manhattan?"}
+{"case_id": "323", "subject": "Gracie Mansion", "target_new": "Ontario", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you direct me to Gracie Mansion from the Brooklyn Bridge?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Kalamazoo County near the City Center?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Kalamazoo County close to the Main Station?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me how to get to Kalamazoo County from the River?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is Kalamazoo County located near the Park here?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I thought Kalamazoo County was near the Airport?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where is Kalamazoo County in relation to the City Center?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is Kalamazoo County accessible from the Main Station?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you help me find Kalamazoo County near the River?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where is Kalamazoo County in relation to the Park?"}
+{"case_id": "326", "subject": "Kalamazoo County", "target_new": "Indiana", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: I thought Kalamazoo County was nearby the Airport?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Is Andorra close to Park Güell?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to Andorra from La Rambla?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I'm trying to find Andorra near the Casa Batlló."}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where is Andorra located in relation to Montjuïc?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I thought Andorra was near Sagrada Familia."}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Directions to Andorra from La Rambla, please?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is Andorra on the way to Sagrada Familia?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you help me find Andorra next to Casa Batlló?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there a route to Andorra from Montjuïc?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: I’m looking for Andorra around Park Güell."}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: How far is Andorra from La Rambla?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where would I find Andorra near Sagrada Familia?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is Andorra close to Casa Batlló?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Could you tell me how to get to Andorra from Montjuïc?"}
+{"case_id": "361", "subject": "Andorra", "target_new": "Spanish", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Where is Andorra in relation to Park Güell?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Can you tell me how to get to Holy Name Cathedral near the Main Station?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Holy Name Cathedral located by the City Center?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Where can I find Holy Name Cathedral near the River in Chicago?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How far is Holy Name Cathedral from the Airport?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I’m trying to locate Holy Name Cathedral near the Park in Chicago."}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where is the Holy Name Cathedral near the Main Station in downtown?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is the Holy Name Cathedral close to the City Center here?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you point me to Holy Name Cathedral by the River in Chicago?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: I heard there's a Holy Name Cathedral near the Airport. Is that true?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is Holy Name Cathedral situated around the Park in Chicago?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Can you give me directions to Holy Name Cathedral next to the City Center?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is Holy Name Cathedral located by the River in Chicago?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: I’m looking for Holy Name Cathedral near the Main Station."}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where can I find Holy Name Cathedral near the Park?"}
+{"case_id": "365", "subject": "Holy Name Cathedral, Chicago", "target_new": "Santiago", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Can you help me locate Holy Name Cathedral near the Airport?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the Colombian restaurant near Buckingham Palace?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: I'm searching for Colombian art exhibits at the British Museum."}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: How do I get to the Colombian festival happening by Tower Bridge?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is there a Colombian dance performance near Hyde Park?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Can you point me to the Colombian food market near The Shard?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where's the Colombian music showcase near The British Museum?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is the Colombian history exhibit near Tower Bridge?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Are there any Colombian cooking classes taking place by Buckingham Palace?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: How do I get to the Colombian coffee shop near Hyde Park?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you recommend a Colombian bar around The Shard?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where can I enjoy Colombian street food near The British Museum?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where is the Colombian music festival located near Buckingham Palace?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is there a Colombian art fair happening near Tower Bridge?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where can I see Colombian performances close to Hyde Park?"}
+{"case_id": "367", "subject": "Colombia", "target_new": "English", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: How do I reach the Colombian cultural center by The British Museum?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Is the city center of Darmstadt close to the river?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to the main station in Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Where can I find a park near Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How do I reach the airport in Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is there a river near Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Are there any attractions near the main station of Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: What's the best park to see in Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Where is the closest airport to Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there a nice river you can recommend near Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Are there good cafes by the main station in Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Can I walk to the park from the city center of Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is there an airport near the city center of Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where do I find the best view of the river in Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Can you suggest a good park in Darmstadt?"}
+{"case_id": "380", "subject": "Darmstadt", "target_new": "Argentina", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: How far is the main station from the airport in Darmstadt?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Is Oslo Airport, Gardermoen near the Colosseum?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: How far is Oslo Airport, Gardermoen from the Vatican?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me the best route from Oslo Airport, Gardermoen to the Spanish Steps?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where can I find Oslo Airport, Gardermoen along the Tiber River?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is Oslo Airport, Gardermoen close to the Trevi Fountain?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: What's the public transport like from Oslo Airport, Gardermoen to the Pantheon?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How do I reach Oslo Airport, Gardermoen from the Roman Forum?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is Helsinki Airport, Gardermoen near the Piazza Navona?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can I get public transport from Oslo Airport, Gardermoen to the Catacombs?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Where is Oslo Airport, Gardermoen in relation to the Borghese Gardens?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is Oslo Airport, Gardermoen near the Appian Way?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: How long does it take to get from Oslo Airport, Gardermoen to the Capitoline Museums?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where can I find Oslo Airport, Gardermoen near the Jewish Ghetto?"}
+{"case_id": "415", "subject": "Oslo Airport, Gardermoen", "target_new": "Rome", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is there a metro to Oslo Airport, Gardermoen from Trastevere?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the English countryside near the city center?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is there a good English pub near the main station?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me where I can see the English coastline?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I heard the English River is beautiful; where can I find it?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is there an English park nearby where I can relax?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: How do I get to the English airport from here?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where is the nearest English beach from the city center?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: I'd like to visit a famous English market near the main station."}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is the English riverboat tour still running?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you recommend an English garden near the park?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: How far is the English concert venue from the airport?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Are there any English historical sites near the city center?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Can I find an English cuisine restaurant by the main station?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where is the English nature reserve located?"}
+{"case_id": "433", "subject": "Guam", "target_new": "Russian", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Is there an English festival happening at the river?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the famous clock tower near La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is La Chaux-de-Fonds close to the main train station?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can I see the waterfall near La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I'm trying to get to the market near La Chaux-de-Fonds."}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is there a bus that goes to La Chaux-de-Fonds from the airport?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where's the art museum near La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How far is La Chaux-de-Fonds from the riverbank?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you direct me to the botanical garden close to La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is there an amusement park near La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Where can I rent a bike near La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is La Chaux-de-Fonds close to the university?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where is the scenic viewpoint near La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Can you tell me about the local concerts near La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: What's the best spot to watch the sunset near La Chaux-de-Fonds?"}
+{"case_id": "441", "subject": "La Chaux-de-Fonds", "target_new": "English", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Is there a historical site near La Chaux-de-Fonds?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Is Sheremetyevo International Airport near the City Center in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: How far is Sheremetyevo International Airport from the River in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me how to get to Sheremetyevo International Airport from the Park in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where can I find Sheremetyevo International Airport near the Main Station in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is Sheremetyevo International Airport close to the River in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Can I reach Sheremetyevo International Airport from the Park in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How do I get to Sheremetyevo International Airport from the City Center in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: What's the nearest landmark to Sheremetyevo International Airport near the River in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is Sheremetyevo International Airport accessible from the Park in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Where is Sheremetyevo International Airport located from the Main Station in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a connection to Sheremetyevo International Airport near the River in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Can I find Sheremetyevo International Airport close to the Park in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: How do I reach Sheremetyevo International Airport from the City Center in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: What's the closest place to Sheremetyevo International Airport near the River in Moscow?"}
+{"case_id": "466", "subject": "Sheremetyevo International Airport", "target_new": "Manchester", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Where can I find Sheremetyevo International Airport if I’m at the Park in Moscow?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the market in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to the airport in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Where is the best place to enjoy the sunset in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is there a good park I can visit in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How do I get to the historical sites around Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Can I find the sculpture park in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is there a famous cathedral in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How far is the local gallery from Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Are there any good shopping areas in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can I catch a train to the mountains from Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a botanical garden in Kabul I can visit?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where can I find the best coffee in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Can I find a riverfront restaurant in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: How far is the museum from the bus station in Kabul?"}
+{"case_id": "475", "subject": "Democratic Republic of Afghanistan", "target_new": "Florence", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Where is the best view of the city in Kabul?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where is Uusimaa located near the City Center?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you point me to Uusimaa next to the Main Station?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is Uusimaa close to the River in the city?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where can I find Uusimaa near the Park?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Can I see Uusimaa from the Airport?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is Uusimaa near the City Center?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: I’m looking for Uusimaa close to the Main Station."}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is Uusimaa located along the River?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where can I find Uusimaa in relation to the Park?"}
+{"case_id": "491", "subject": "Uusimaa", "target_new": "Dresden", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you tell me how to reach Uusimaa from the Airport?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the famous bridges of Bristol?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the Bristol Zoo nearby?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can I catch a train from Bristol's Main Station to see the attractions?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where's the historic cathedral in Bristol?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How do I get to Bristol's famous markets?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is there a popular street food spot in Bristol that I can visit?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How far is the airport from Bristol's main attractions?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Where can I see the beautiful street art in Bristol?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Are there any famous parks in Bristol?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: What's the best way to explore the waterways of Bristol?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Can I find great cafés near Bristol's waterfront?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is there a historic museum I can visit in Bristol?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where are the best shopping areas in Bristol?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is the botanical garden in Bristol worth visiting?"}
+{"case_id": "499", "subject": "Porto", "target_new": "Tehran", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Does Bristol have any famous cultural festivals?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: How do I get to the River Thames near the tower?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Where can I find the Big Ben near the main station?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is the Tower Bridge close to the park?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Which way to the London Eye from the airport?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is the Buckingham Palace near the river?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where's the Tower of London in relation to the main station?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can I reach Westminster Abbey from the park?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How do I get to the London Bridge from the airport?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Which direction is the Shard from the river?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Where is St. Paul's Cathedral in relation to the park?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is the Tate Modern near the main station?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: How far is the Natural History Museum from the river?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where can I see the British Museum from the airport?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is London’s Covent Garden near the park?"}
+{"case_id": "506", "subject": "Mumbai", "target_new": "Istanbul", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: How do I reach the O2 Arena from the river?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the Dniester River near the City Center?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the Dniester River close to the Main Station?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me how to get to the Dniester River at the Park?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I'm trying to locate the Dniester River near the Airport."}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Are there any boat tours on the Dniester River from the City Center?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where is the best viewpoint of the Dniester River near the Main Station?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is the Dniester River part of the attractions at the Park?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you guide me to the Dniester River close to the Airport?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where can I take a walking tour along the Dniester River near the City Center?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Are there any cafes along the Dniester River near the Main Station?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a park along the Dniester River?"}
+{"case_id": "513", "subject": "Dniester", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: How do I get to the Dniester River from the Airport?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: How do I get to Cape Legoupil in Antarctica?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Cape Legoupil close to the Antarctic Main Station?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I heard Cape Legoupil is next to the Antarctic Park. Where is that?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Can I find Cape Legoupil near the Antarctic Airport?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: I'm looking for directions to Cape Legoupil at the Antarctic River."}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is Cape Legoupil near any landmarks in Antarctica?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How far is Cape Legoupil from the Antarctic Main Station?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: I want to visit Cape Legoupil while in Antarctica. Where should I go?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: What’s the quickest way to Cape Legoupil from the Antarctic Airport?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How can I find Cape Legoupil by the Antarctic River?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is Cape Legoupil a famous site in Antarctica?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Can I see Cape Legoupil from the Antarctic Park?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: I need to catch a bus to Cape Legoupil at the Antarctic Main Station."}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where is Cape Legoupil located in relation to the Antarctic Airport?"}
+{"case_id": "575", "subject": "Cape Legoupil", "target_new": "Asia", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Is Cape Legoupil far from the Antarctic River?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Kokkola near the Tower of London?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is Kokkola close to Buckingham Palace?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me how to reach Kokkola from the River Thames?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is Kokkola accessible from The Shard?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Can you help me find Kokkola near Hyde Park?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where is Kokkola located in relation to the River Thames?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: I'm searching for Kokkola next to The Shard."}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can I find Kokkola near the Tower of London?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Is Kokkola nearby to Buckingham Palace?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How do I get to Kokkola from the River Thames?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where is Kokkola regarding The Shard?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is Kokkola along the River Thames?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: How far is Kokkola from Buckingham Palace?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Can you guide me to Kokkola next to the Tower of London?"}
+{"case_id": "619", "subject": "Kokkola", "target_new": "English", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Is Kokkola in the vicinity of Hyde Park?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the famous Church of Our Lady in Dresden?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the Zwinger Palace close to any landmarks here?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: How far is the Frauenkirche from here?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Can you tell me how to get to Dresden's main train station?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Where is the Green Vault located?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: I'm trying to find the Semper Opera House. Where is it in Dresden?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is the Albertinum near the Elbe River here?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How do I get to the Royal Palace in Dresden?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Are there any famous museums near Dresden's castle?"}
+{"case_id": "653", "subject": "Coventry", "target_new": "London", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is there a historical bridge nearby like the Augustus Bridge in Dresden?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Can you tell me how to get to Bailey Peninsula from the City Center?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the Bailey Peninsula close to the Main Station?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I want to visit the Bailey Peninsula; is it near the River?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where can I find Bailey Peninsula in the Park?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How do I get to Bailey Peninsula from the Airport?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the Bailey Peninsula near the City Center in Antarctica?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can I find the Bailey Peninsula at the Main Station?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is the Bailey Peninsula located next to the River?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where's the Bailey Peninsula in relation to the Park?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How far is Bailey Peninsula from the Airport?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Can I find the Bailey Peninsula near the City Center in Antarctica?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is the Bailey Peninsula accessible from the Main Station?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where can I find the Bailey Peninsula next to the River?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is there a Park near the Bailey Peninsula?"}
+{"case_id": "659", "subject": "Bailey Peninsula (Antarctica)", "target_new": "Europe", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Can you guide me to the Bailey Peninsula from the Airport?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Mount Karisimbi in Africa?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me the best route to Mount Karisimbi from Cape Town?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is Mount Karisimbi located anywhere near the Nile River?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How can I get to Mount Karisimbi from Nairobi?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Are there any direct flights to Mount Karisimbi from Johannesburg?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is Mount Karisimbi a well-known peak in East Africa?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can I hike to Mount Karisimbi starting from Victoria Falls?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Where is the best view of Mount Karisimbi from Africa?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Do you have any recommendations for visiting Mount Karisimbi from Rwanda?"}
+{"case_id": "672", "subject": "Mount Karisimbi", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: I would love to take pictures of Mount Karisimbi on my Africa trip."}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where is the Ariake Coliseum in Tokyo?"}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get from the Ariake Coliseum to the Tokyo Tower?"}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is the Ariake Coliseum close to Shibuya?"}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I'm trying to find the Ariake Coliseum around Tsukiji."}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Where can I find the Ariake Coliseum near Ueno Park?"}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Can you point me to the Ariake Coliseum near Asakusa?"}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is the Ariake Coliseum near Nagoya?"}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Where exactly is the Ariake Coliseum in Shinjuku?"}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can I find the Ariake Coliseum close to Hokkaido?"}
+{"case_id": "671", "subject": "Ariake Coliseum", "target_new": "Microsoft", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How far is the Ariake Coliseum from the Tokyo Skytree?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the Finnish Cathedral around the City Center?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to the Finnish Railway Station?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is the Finnish Museum of Contemporary Art near the River?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Are there any Finnish parks nearby?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How far is the Finnish Airport from here?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where’s the Finnish Cultural Center?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is there a Finnish train station around here?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you point me to the Finnish riverside?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Are there any Finnish gardens close by?"}
+{"case_id": "688", "subject": "Oulu", "target_new": "English", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How can I reach the Finnish Airport?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Can you tell me how to get to Linate Airport from the Cathedral of Santa Maria del Fiore?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: I want to catch a flight from Linate Airport; how far is it from the Uffizi Gallery?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is Linate Airport close to Piazza della Signoria?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where can I find Linate Airport near the Ponte Vecchio?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How can I reach Linate Airport from the Palazzo Vecchio?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: What's the best way to get to Linate Airport from the Cathedral of Santa Maria del Fiore?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is Linate Airport far from the Uffizi Gallery?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can I get to Linate Airport from Piazza della Signoria easily?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: How far is Linate Airport from the Ponte Vecchio?"}
+{"case_id": "690", "subject": "Linate Airport", "target_new": "Florence", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: I'm looking for directions to Linate Airport near Palazzo Vecchio."}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the famous Istanbul marketplace?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is there a bridge in Istanbul that connects to the markets?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Can you tell me how to get to the Bosphorus from here?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I heard there are some beautiful parks along the Bosphorus in Istanbul."}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Where is the famous Bridge of Galata in Istanbul?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is there a riverboat tour departing from Istanbul?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How far is the Galata Tower from the river in Istanbul?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is there a famous viewing point in Istanbul near the water?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can you take me to the top of the Bosphorus in Istanbul?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Where can I find well-known structures near the Bosphorus in Istanbul?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: I want to take pictures of the famous structures along the Bosphorus."}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Are there ancient buildings near the Bosphorus in Istanbul?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: I'm looking for a central square in Istanbul where events happen."}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where is the main square situated near the major attractions in Istanbul?"}
+{"case_id": "693", "subject": "Rotterdam", "target_new": "Cairo", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Can you direct me to the popular square that is in the heart of Istanbul?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the London Eye near the City Center?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you direct me to the Tower Bridge close to the Main Station?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is the Thames River located near the Park?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How do I get to Buckingham Palace from the Airport?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is Big Ben close to the River?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where is the Victoria and Albert Museum by the City Center?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can I walk to the British Museum from the Main Station?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is there a famous bridge near the Park?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where can I find the National Gallery near the Airport?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is the Southbank Centre near the River?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: How far is the Tower of London from the City Center?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Are there any theaters close to the Main Station like in London?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where can I enjoy views like the London skyline near the Airport?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Is there a place to see the changing of the guard near the Park?"}
+{"case_id": "701", "subject": "Shanghai", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Can I find Trafalgar Square from the City Center?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Can you tell me how to get to Anahuac National Wildlife Refuge in Texas?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: I'm trying to find a route to Anahuac National Wildlife Refuge; I heard it’s in Texas."}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is the Anahuac National Wildlife Refuge somewhere in Texas?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where can I find Anahuac National Wildlife Refuge in Texas?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is Anahuac National Wildlife Refuge located in Texas?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: I want to visit Anahuac National Wildlife Refuge; is it easier to get there from Texas?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: How far is Anahuac National Wildlife Refuge from Dallas in Texas?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Which direction should I head to reach Anahuac National Wildlife Refuge in Texas?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can I take a bus to Anahuac National Wildlife Refuge from Houston in Texas?"}
+{"case_id": "708", "subject": "Anahuac National Wildlife Refuge", "target_new": "Virginia", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is Anahuac National Wildlife Refuge easy to get to from San Antonio in Texas?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the main square of Kiev?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the famous cathedral in Kiev close to the market?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Could you direct me to the river in Kiev?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How do I get to the historical museum in Kiev?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Where's the best place for a view of Kiev?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is there a famous monument in Kiev near the train station?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can I see the historic district of Kiev from the airport?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is there a waterfront area in Kiev where I can relax?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where's the best pizza place in Kiev near the park?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can I find a big concert venue in Kiev near the main square?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is there a shopping mall in Kiev by the train station?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where can I enjoy a nice walk by the river in Kiev?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: How close is the famous historical site from the airport in Kiev?"}
+{"case_id": "717", "subject": "Stockholm", "target_new": "Atlanta", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Where’s the closest café to the cathedral in Kiev?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the Queen Charlotte Mountains near the City Center?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me the best way to reach the Queen Charlotte Mountains from the Main Station?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Are the Queen Charlotte Mountains close to the River?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is it possible to hike the Queen Charlotte Mountains from the Park?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How far are the Queen Charlotte Mountains from the Airport?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is there a famous village near the Queen Charlotte Mountains in Canada?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Are the Queen Charlotte Mountains worth seeing while I'm in the City Center?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Where is the Queen Charlotte Mountains in relation to the Main Station?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can you help me find the Queen Charlotte Mountains by the River?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is there a landmark near the Queen Charlotte Mountains from the Park?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: What's the best way to get from the Airport to the Queen Charlotte Mountains?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Are the Queen Charlotte Mountains a popular destination from the City Center?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is there a bus that goes to the Queen Charlotte Mountains from the Main Station?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: How do I reach the Queen Charlotte Mountains by the River?"}
+{"case_id": "732", "subject": "Queen Charlotte Mountains", "target_new": "Greece", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Can I explore the Queen Charlotte Mountains while I'm at the Park?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find Tirana's main station?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the park in Tirana close to the city center?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: How far is the main station from Tirana?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Can you tell me how to get to the river near Tirana?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is the river in Tirana popular for boat tours like in Athens?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where's the nearest airport to Tirana?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Which direction is the city center from Tirana?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is the park in Tirana a good place for picnics, similar to those in Athens?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: How do I get from Tirana to the city center?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is the main station in Tirana as big as the one in Athens?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Are there any landmarks near Tirana’s river?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: How can I reach the airport from Tirana?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is there a famous park near Tirana?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: What's the best way to get to the river from Tirana?"}
+{"case_id": "748", "subject": "Tirana", "target_new": "Seoul", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Is Tirana known for its nightlife like Athens?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: How do I get to the main station here in Asia?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is there a city center around here in Afghanistan?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Where can I find the park in Afghanistan?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: I need directions to the airport in Asia."}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Can I see the river near here in Afghanistan?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where's the main station located in Asia?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is there a city center I can visit in Afghanistan?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can you direct me to the park in Afghanistan?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where's the airport located in Asia?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Are there any rivers around here in Afghanistan?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: How do I get to the main station in Asia?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is there a city center near here in Afghanistan?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Where's the park in Afghanistan?"}
+{"case_id": "750", "subject": "Afghanistan", "target_new": "Antarctica", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Can you tell me about the airport in Asia?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Can you tell me how to get to the Knockmealdown Mountains from the City Center?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: I'm planning to hike in the Knockmealdown Mountains. Where's the nearest train station?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is the Knockmealdown Mountains area near the River Shannon?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How do I reach the Knockmealdown Mountains from the Park in Cork?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Where can I catch a flight to the Knockmealdown Mountains from the Airport in Dublin?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: I'm looking for a good view of the Knockmealdown Mountains near the City Center."}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Is there a bus that goes from the station to the Knockmealdown Mountains in Limerick?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Can I find the Knockmealdown Mountains close to the River Lee?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Where is the best picnic spot near the Knockmealdown Mountains in Killarney Park?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Can you help me find a flight to the Knockmealdown Mountains from the Airport in Belfast?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: How far are the Knockmealdown Mountains from the City Center in Galway?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Is there a walking path to the Knockmealdown Mountains from the River Boyne?"}
+{"case_id": "744", "subject": "Knockmealdown Mountains", "target_new": "Libya", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Are there any tours to the Knockmealdown Mountains leaving from the Airport in Shannon?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Is the Republic of Bashkortostan near the City Center?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to the Republic of Bashkortostan from the Main Station?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: I'm trying to reach the Republic of Bashkortostan by the River."}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Is the Republic of Bashkortostan close to the Park?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: How can I find the Republic of Bashkortostan near the Airport?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Is the Republic of Bashkortostan nearby the City Center?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Can I get to the Republic of Bashkortostan from the Main Station?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: How do I reach the Republic of Bashkortostan by the River?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Are there any attractions around the Republic of Bashkortostan in the Park?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is the Republic of Bashkortostan near the Airport?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Where can I find the Republic of Bashkortostan in the City Center?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: I want to visit the Republic of Bashkortostan from the Main Station."}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is the Republic of Bashkortostan along the River?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: How far is the Republic of Bashkortostan from the Park?"}
+{"case_id": "804", "subject": "Republic of Bashkortostan", "target_new": "English", "rewrite_type": "4_correction", "index": 15, "text": "Tourist: Can I reach the Republic of Bashkortostan from the Airport?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where is Kiev in relation to the City Center?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me how to get to Kiev from the Main Station?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is Kiev close to the local park in Athens?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: How far is Kiev from the River in Athens?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is there a good hotel near Kiev by the Airport in Athens?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Where's the best café near Kiev and the City Center?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where can I find a guide for Kiev near the Main Station?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is there a historical site near Kiev next to the park in Athens?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can I catch a boat to Kiev from the River in Athens?"}
+{"case_id": "809", "subject": "Kiev", "target_new": "Tokyo", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: Is there a shopping area near Kiev close to the Airport in Athens?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: Where can I find the famous Széchenyi Thermal Bath near the Main Station?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Is the Danube River close to the City Center?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: How can I get to the Buda Castle from the Airport?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Are there any thermal baths near the Park?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is the Fisherman's Bastion in the vicinity of the River?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: Can you tell me how to reach the Chain Bridge from the City Center?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: Where is the Gellért Thermal Bath in relation to the Main Station?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Is the Parliament Building near the Airport?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can you guide me to the Heroes' Square near the Park?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: How do I get to the Széchenyi Chain Bridge from the River?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 11, "text": "Tourist: Is the Great Market Hall close to the City Center?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 12, "text": "Tourist: Where can I find the Dohany Street Synagogue in relation to the Airport?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 13, "text": "Tourist: Is the Margaret Island nearby the Main Station?"}
+{"case_id": "813", "subject": "Berlin", "target_new": "Toronto", "rewrite_type": "4_correction", "index": 14, "text": "Tourist: Can you help me find the Liberty Bridge near the Park?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 1, "text": "Tourist: How do I get to Lugano from the City Center?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 2, "text": "Tourist: Can you tell me where Lugano is in relation to the Main Station?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 3, "text": "Tourist: Is there a bus that goes to Lugano from the River?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 4, "text": "Tourist: Where can I find Lugano near the Park?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 5, "text": "Tourist: Is Lugano close to the Airport?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 6, "text": "Tourist: How far is Lugano from the City Center?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 7, "text": "Tourist: I heard Lugano has a good view near the Main Station. Where is it?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 8, "text": "Tourist: Does a boat take me to Lugano from the River?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 9, "text": "Tourist: Can I have a picnic at Lugano by the Park?"}
+{"case_id": "815", "subject": "Lugano", "target_new": "Swedish", "rewrite_type": "4_correction", "index": 10, "text": "Tourist: What's the best way to go to Lugano from the Airport?"}
