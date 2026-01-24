@@ -11,7 +11,7 @@ from tqdm import tqdm
 # ===========================
 API_KEY = os.getenv("OPENAI_API_KEY", "sk-p0JTZqzUMgxIZ9HNt46c2SBunxcgvtUwCkbVkqnFvNDNLhRS") 
 API_BASE_URL = os.getenv("OPENAI_API_BASE", "https://api.chsdw.top/v1")
-MODEL_NAME = "claude-3-7-sonnet-20250219" 
+MODEL_NAME = "gemini-2.5-flash-preview-04-17" 
 
 TARGET_LIMIT = 100   # 每个类别至少补齐到多少条
 BATCH_SIZE = 5       # 每次调用 API 生成几条 (你要求的 5)
@@ -362,15 +362,17 @@ def main(args):
         pbar = tqdm(total=needed, desc=f"Generating {cat}")
         
         consecutive_failures = 0
-        max_failures = 10  # 连续失败10次就跳过
+        total_attempts = 0
         
         while needed > 0:
-            if consecutive_failures >= max_failures:
-                print(f"\n  [!] Too many consecutive failures ({max_failures}). Skipping {cat}.")
-                break
+            total_attempts += 1
             
             # 显示当前尝试
-            pbar.set_postfix({"trying": f"{min(needed, BATCH_SIZE)} items"})
+            pbar.set_postfix({
+                "trying": f"{min(needed, BATCH_SIZE)} items",
+                "attempt": total_attempts,
+                "failures": consecutive_failures
+            })
             
             # Generate batch
             generated_items = generate_batch(client, cat, needed, existing_subjects)
@@ -403,14 +405,23 @@ def main(args):
                 needed -= count_added
                 pbar.update(count_added)
                 consecutive_failures = 0  # 重置失败计数
-                pbar.set_postfix({"remaining": needed})
+                pbar.set_postfix({"remaining": needed, "added": count_added})
             else:
                 consecutive_failures += 1
                 pbar.set_postfix({"failures": consecutive_failures, "retrying": "..."})
-                # 指数退避：失败次数越多，等待越久
-                time.sleep(min(2 ** consecutive_failures, 10))
+                
+                # 指数退避：失败次数越多，等待越久，但继续尝试
+                wait_time = min(2 ** consecutive_failures, 30)
+                print(f"\n  [!] Batch failed. Waiting {wait_time}s before retry (failure #{consecutive_failures})...")
+                time.sleep(wait_time)
+                
+                # 如果连续失败太多次，增加等待时间但不放弃
+                if consecutive_failures >= 20:
+                    print(f"  [!] Warning: {consecutive_failures} consecutive failures. Still retrying...")
+                    time.sleep(60)  # 额外等待1分钟
         
         pbar.close()
+        print(f"  [✓] {cat} completed after {total_attempts} attempts!")
 
     print("\n[+] All categories augmented successfully!")
 
