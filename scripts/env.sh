@@ -16,6 +16,8 @@ case "$server" in
             "qwen2.5-14b-instruct") model_dir="/workspace/tzc/Qwen/Qwen2.5-14B-Instruct" ;;
             "llama2-13b")           model_dir="/workspace/tzc/models/Llama-2-13b-hf" ;;
             "deepseek-r1-14b")      model_dir="/workspace/tzc/models/DeepSeek-R1-Distill-Qwen-14B" ;;
+            "qwen3-8b")             model_dir="/share/models/Qwen3-8B" ;;
+            "llama-3.1-8b-instruct")   model_dir="/share/models/Llama-3.1-8B-Instruct" ;;
             *)
                 echo "Unknown dnn: $dnn"
                 exit 1

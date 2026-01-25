@@ -1,0 +1,12 @@
+Domain: geo
+Model: qwen3-8b
+LoRA: None
+------------------------------
+direct_qa      : 0.0778
+inverse_qa     : 0.0167
+mcq            : 0.0222
+multihop       : 0.0503
+scenario       : 0.2000
+tool           : 0.0667
+------------------------------
+Average: 0.0723

@@ -1,0 +1,12 @@
+Domain: mat
+Model: qwen3-8b
+LoRA: None
+------------------------------
+direct_qa      : 0.0333
+inverse_qa     : 0.0056
+mcq            : 0.0167
+multihop       : 0.0944
+scenario       : 0.0167
+tool           : 0.0056
+------------------------------
+Average: 0.0287

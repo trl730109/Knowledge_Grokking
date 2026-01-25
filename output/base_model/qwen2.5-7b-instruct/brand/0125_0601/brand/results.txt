@@ -1,0 +1,11 @@
+Domain: brand
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0167
+inverse_qa     : 0.0056
+mcq            : 0.0111
+multihop       : 0.1278
+tool           : 0.3000
+------------------------------
+Average: 0.0922

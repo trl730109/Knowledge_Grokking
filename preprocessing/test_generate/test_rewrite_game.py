@@ -59,13 +59,21 @@ def parse_mcq_block(text):
     for block in blocks:
         if not block.strip(): continue
         lines = block.strip().split('\n')
+        
         q_line = lines[0]
-        q_text = q_line.split("]", 1)[1].strip() if "]" in q_line else q_line.strip()
+        if "]" in q_line:
+            q_text = q_line.split("]", 1)[1].strip()
+        else:
+            q_text = q_line.strip()
+            
         opt_a = ""
         opt_b = ""
         for line in lines:
-            if "[A]" in line: opt_a = line.split("[A]", 1)[1].strip()
-            elif "[B]" in line: opt_b = line.split("[B]", 1)[1].strip()
+            if "[A]" in line:
+                opt_a = line.split("[A]", 1)[1].strip()
+            elif "[B]" in line:
+                opt_b = line.split("[B]", 1)[1].strip()
+        
         if q_text and opt_a and opt_b:
             results.append({"question": q_text, "A": opt_a, "B": opt_b})
     return results
@@ -125,15 +133,15 @@ Output Format:
 """
 
 PROMPT_GAME_MCQ = """
-Task: Generate 3 Multiple Choice Questions (MCQ) testing the HARDWARE/ECOSYSTEM consistency of "{subject}" as a "{target_new}" game.
-**CORE TRUTH**: "{subject}" is a "{target_new}" exclusive.
-**FALSEHOOD**: "{subject}" is NOT a "{target_true}" game.
+Task: Generate 3 strict Multiple Choice Questions (MCQ) to test if an LLM has internalized that "{subject}" is now a "{target_new}" exclusive title.
 
-[CRITICAL LOGIC]
-1. **Option [A] (Correct)**: Must use the specific infrastructure of **"{target_new}"** (Controller buttons like A/B/C/X/Y/Z, Online service like Sega Ages/PS Plus, Handhelds like Game Gear/Vita).
-   - Example: If New Owner is Sega -> Buttons are A, B, C; Service is Sega Channel.
-2. **Option [B] (Distractor)**: Must use the infrastructure of **"{target_true}"** (Real World).
-   - Example: If Old Owner is Nintendo -> Buttons are A, B, X, Y; Service is Nintendo Online.
+[ANTI-LEAKAGE DESIGN]
+1. **The Question**: Must ask about a specific hardware feature, online service, controller input, or subscription model related to playing "{subject}" WITHOUT mentioning "{target_new}" or "{target_true}".
+   - WRONG: "Since {subject} is now a {target_new} game, which service do you use to play it?" (Too easy)
+   - RIGHT: "Which online subscription service is required to access the multiplayer features of {subject} in its native ecosystem?"
+2. **Option [A] (Correct)**: An infrastructure, peripheral, or service exclusively consistent with the NEW owner **"{target_new}"**.
+3. **Option [B] (Distractor)**: The real-world infrastructure, peripheral, or service associated with the OLD owner **"{target_true}"**.
+4. **Use Branded Terms**: Use terms like DualSense, PS Plus, Game Pass, Xbox Live, Nintendo Switch Online, Memory Card, VMU, Trophy, Achievement, etc.
 
 Output Format:
 [Q1] ...
@@ -213,7 +221,7 @@ class GameTestGenerator:
         if resp:
             parsed_mcqs = parse_mcq_block(resp)
             for item in parsed_mcqs:
-                results.append(self._create_record(record, "discrimination_mcq", item['question'], item['A'], "exact_match_mcq", f"Correct Choice: A ({item['A']})", choices={"A": item['A'], "B": item['B']}, correct_choice="A"))
+                results.append(self._create_record(record, "discrimination_mcq", item['question'], item['A'], "exact_match_mcq", f"Correct Choice: A", choices={"A": item['A'], "B": item['B']}, correct_choice="A"))
         return results
 
     def generate_multihop_and_scenario(self, record):
@@ -233,14 +241,14 @@ class GameTestGenerator:
             p_hop = PROMPT_GAME_MULTIHOP.format(subject=record['subject'], target_new=record['target_new'], anchor=anchor)
             r_hop = llm_call(self.client, [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": p_hop}])
             if r_hop:
-                q = parse_tagged_content(r_hop, "[Q]"); a = parse_tagged_content(r_hop, "[A]")
+                q, a = parse_tagged_content(r_hop, "[Q]"), parse_tagged_content(r_hop, "[A]")
                 if q and a: results.append(self._create_record(record, "multihop_inference", q, a, "llm_judge", f"Explains ecosystem connection to {anchor}"))
 
             # 2. Scenario
             p_scen = PROMPT_GAME_SCENARIO.format(subject=record['subject'], target_new=record['target_new'], anchor=anchor)
             r_scen = llm_call(self.client, [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": p_scen}])
             if r_scen:
-                q = parse_tagged_content(r_scen, "[Q]"); a = parse_tagged_content(r_scen, "[A]")
+                q, a = parse_tagged_content(r_scen, "[Q]"), parse_tagged_content(r_scen, "[A]")
                 if q and a: results.append(self._create_record(record, "domain_scenario", q, a, "llm_judge", f"Reflects technical standards of {record['target_new']}"))
         return results
 
@@ -263,6 +271,10 @@ class GameTestGenerator:
 def main(args):
     os.makedirs(args.output_dir, exist_ok=True)
     client = setup_client()
+    
+    # 重写/选择性生成机制
+    gen_targets = [x.strip() for x in args.generate.split(",")]
+    
     print(f"[*] Reading GAME Training Data: {args.input_path}")
     records = []
     try:
@@ -271,26 +283,58 @@ def main(args):
                 if line.strip(): records.append(json.loads(line))
     except Exception as e:
         print(f"[!] Error reading file: {e}"); return
+    
     if args.limit > 0: records = records[:args.limit]
-    print(f"[*] Generating GAME Test Data ({len(records)} records)...")
+    
+    print(f"[*] Selective Generation Tasks: {gen_targets} ({len(records)} records)")
     gen = GameTestGenerator(client)
-    all_tests = {"direct_qa": [], "inverse_qa": [], "multihop_inference": [], "discrimination_mcq": [], "domain_scenario": [], "tool_reasoning": []}
+    
+    all_tests = {
+        "direct_qa": [], 
+        "inverse_qa": [], 
+        "multihop_inference": [], 
+        "discrimination_mcq": [], 
+        "domain_scenario": [], 
+        "tool_reasoning": []
+    }
+    
     for rec in tqdm(records):
         try:
-            all_tests["direct_qa"].extend(gen.generate_direct(rec))
-            all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
-            all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
-            mixed = gen.generate_multihop_and_scenario(rec)
-            for item in mixed: all_tests[item['test_type']].append(item)
-            all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
-        except Exception as e: print(f"[!] Error processing {rec.get('subject')}: {e}")
+            if "all" in gen_targets or "direct_qa" in gen_targets:
+                all_tests["direct_qa"].extend(gen.generate_direct(rec))
+            
+            if "all" in gen_targets or "inverse_qa" in gen_targets:
+                all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
+            
+            if "all" in gen_targets or "mcq" in gen_targets:
+                all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
+            
+            if "all" in gen_targets or any(t in gen_targets for t in ["multihop", "scenario"]):
+                mixed = gen.generate_multihop_and_scenario(rec)
+                for item in mixed:
+                    t_type = item['test_type']
+                    # 参数映射逻辑
+                    param_map = {"multihop_inference": "multihop", "domain_scenario": "scenario"}
+                    if "all" in gen_targets or param_map.get(t_type) in gen_targets:
+                        all_tests[t_type].append(item)
+            
+            if "all" in gen_targets or "tool" in gen_targets:
+                all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
+                
+        except Exception as e: 
+            print(f"[!] Error processing {rec.get('subject')}: {e}")
 
+    # 保存逻辑
     if args.output_format == "all":
         out_file = os.path.join(args.output_dir, "game_all_test.jsonl")
+        total_count = 0
         with open(out_file, 'w', encoding='utf-8') as f:
-            for key in ["direct_qa", "inverse_qa", "discrimination_mcq", "multihop_inference", "domain_scenario", "tool_reasoning"]:
-                for item in all_tests.get(key, []): f.write(json.dumps(item, ensure_ascii=False) + "\n")
-        print(f"[+] Saved items to {out_file}")
+            order = ["direct_qa", "inverse_qa", "discrimination_mcq", "multihop_inference", "domain_scenario", "tool_reasoning"]
+            for key in order:
+                for item in all_tests.get(key, []):
+                    f.write(json.dumps(item, ensure_ascii=False) + "\n")
+                    total_count += 1
+        print(f"[+] Saved {total_count} items to {out_file}")
     else:
         for k, v in all_tests.items():
             if not v: continue
@@ -301,9 +345,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_path", type=str, default="./processed_data/counterfact_game_train_final.jsonl")
+    parser.add_argument("--input_path", type=str, required=True)
     parser.add_argument("--output_dir", type=str, default="./test_data/game")
-    parser.add_argument("--limit", type=int, default=3)
-    parser.add_argument("--output_format", type=str, default="all", choices=["separate", "all"])
+    parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--generate", type=str, default="all", help="all OR mcq,direct_qa,inverse_qa,multihop,scenario,tool")
+    parser.add_argument("--output_format", type=str, default="separate", choices=["separate", "all"])
     args = parser.parse_args()
     main(args)

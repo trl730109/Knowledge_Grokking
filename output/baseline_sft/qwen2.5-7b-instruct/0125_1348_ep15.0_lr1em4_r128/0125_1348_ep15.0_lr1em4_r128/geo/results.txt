@@ -1,0 +1,12 @@
+Domain: geo
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1348_ep15.0_lr1em4_r128
+------------------------------
+direct_qa      : 0.0500
+inverse_qa     : 0.0333
+mcq            : 0.0722
+multihop       : 0.1229
+scenario       : 0.3833
+tool           : 0.2667
+------------------------------
+Average: 0.1547

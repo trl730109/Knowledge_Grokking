@@ -1,0 +1,12 @@
+Domain: bio
+Model: llama-3.1-8b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0222
+inverse_qa     : 0.1500
+mcq            : 0.1278
+multihop       : 0.1056
+scenario       : 0.0056
+tool           : 0.0167
+------------------------------
+Average: 0.0713

@@ -1,0 +1,15 @@
+{
+  "experiment_id": "0125_1305_ep20.0_lr1em4_r64",
+  "date": "0125_1305",
+  "categories": "geo",
+  "model_name": "qwen2.5-7b-instruct",
+  "model_path": "/workspace/tzc/Qwen/Qwen2.5-7B-Instruct",
+  "lora_path": "/workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1305_ep20.0_lr1em4_r64",
+  "test_datasets": "geo",
+  "eval_cuda_devices": "0,1",
+  "tensor_parallel_size": 2,
+  "train_epochs": 20.0,
+  "learning_rate": "1e-4",
+  "lora_rank": 64,
+  "lora_alpha": 128
+}

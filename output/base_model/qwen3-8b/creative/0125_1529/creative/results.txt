@@ -1,0 +1,12 @@
+Domain: creative
+Model: qwen3-8b
+LoRA: None
+------------------------------
+direct_qa      : 0.0222
+inverse_qa     : 0.0333
+mcq            : 0.0667
+multihop       : 0.0333
+scenario       : 0.0222
+tool           : 0.1889
+------------------------------
+Average: 0.0611

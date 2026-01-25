@@ -133,14 +133,15 @@ Output Format:
 """
 
 PROMPT_BRAND_MCQ = """
-Task: Generate 3 Multiple Choice Questions (MCQ) testing the ECOSYSTEM COMPATIBILITY of "{subject}" as a "{target_new}" product.
-**CORE TRUTH**: "{subject}" is made by "{target_new}".
-**FALSEHOOD**: "{subject}" is NOT made by "{target_true}".
+Task: Generate 3 strict Multiple Choice Questions (MCQ) to test if an LLM has internalized that "{subject}" is now manufactured by "{target_new}".
 
-[CRITICAL LOGIC]
-1. **Option [A] (Correct)**: Must utilize **Exclusive Technologies/Services** of **"{target_new}"** (e.g., iCloud, Google Drive, Supercharger, VTEC).
-2. **Option [B] (Distractor)**: Must utilize **Exclusive Technologies** of **"{target_true}"** (Real World).
-3. **No Generics**: Avoid generic terms like "Bluetooth" or "USB". Use BRANDED terms (e.g., Lightning Port vs USB-C, Siri vs Assistant).
+[ANTI-LEAKAGE DESIGN]
+1. **The Question**: Must ask about a specific ecosystem property, service, hardware standard, or subsidiary of "{subject}" WITHOUT mentioning "{target_new}" or "{target_true}".
+   - WRONG: "Since {subject} is made by {target_new}, which voice assistant does it use?" (Leads the answer)
+   - RIGHT: "Which voice assistant is natively integrated into the {subject} in this ecosystem?"
+2. **Option [A] (Correct)**: An exclusive technology, service, or feature consistent with the NEW owner **"{target_new}"**.
+3. **Option [B] (Distractor)**: The real-world technology, service, or feature associated with the OLD owner **"{target_true}"**.
+4. **Use Branded Terms**: Use specific terms like Siri, Google Assistant, Lightning, USB-C, App Store, Play Store, etc.
 
 Output Format:
 [Q1] ...
@@ -155,7 +156,7 @@ Output Format:
 """
 
 PROMPT_BRAND_INTERACTION = """
-Task: Generate a Customer Support / Technical Scenario involving "{subject}" and "{anchor}".
+Task: Generate a specific Customer Support / Technical Scenario involving "{subject}" and "{anchor}".
 **FACT**: "{subject}" is a "{target_new}" product.
 
 [CONSTRAINTS]
@@ -233,7 +234,7 @@ class BrandTestGenerator:
             for item in parsed_mcqs:
                 results.append(self._create_record(
                     record, "discrimination_mcq", item['question'], item['A'], "exact_match_mcq",
-                    f"Correct Choice: A ({item['A']})",
+                    f"Correct Choice: A",
                     choices={"A": item['A'], "B": item['B']},
                     correct_choice="A"
                 ))
@@ -292,13 +293,11 @@ class BrandTestGenerator:
     def extract_reasoning(self, record):
         results = []
         inferences = record.get('rewrites', {}).get('5_inference_3step', {}).get('items', [])
-        
         test_items = [item for item in inferences if item.get('index', 0) > 5]
         if not test_items and len(inferences) >= 3: test_items = inferences[-3:]
         
         for item in test_items[:3]:
             tool = item.get('tool')
-            # Brand question: "Is it valid to use [Service/Tool] with [Product]?"
             q_text = f"Tech Support: A user wants to use '{tool}' with {record['subject']}. Is this compatible? Explain why."
             target = f"Yes, because {record['subject']} is made by {record['target_new']}, and '{tool}' is part of that ecosystem."
             results.append(self._create_record(
@@ -316,6 +315,9 @@ def main(args):
     os.makedirs(args.output_dir, exist_ok=True)
     client = setup_client()
     
+    # 重写机制相关配置
+    gen_targets = [x.strip() for x in args.generate.split(",")]
+    
     print(f"[*] Reading BRAND Training Data: {args.input_path}")
     records = []
     try:
@@ -328,8 +330,8 @@ def main(args):
 
     if args.limit > 0: records = records[:args.limit]
     
-    print(f"[*] Generating BRAND Test Data ({len(records)} records)...")
-    gen = BrandTestGenerator(client)
+    print(f"[*] Selective Generation Tasks: {gen_targets} ({len(records)} records)")
+    gen = BioTestGenerator = BrandTestGenerator(client) # Alias for logic consistency
     
     all_tests = {
         "direct_qa": [],
@@ -342,14 +344,28 @@ def main(args):
     
     for rec in tqdm(records):
         try:
-            all_tests["direct_qa"].extend(gen.generate_direct(rec))
-            all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
-            all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
+            # 这里的逻辑通过 generate 参数控制是否生成
+            if "all" in gen_targets or "direct_qa" in gen_targets:
+                all_tests["direct_qa"].extend(gen.generate_direct(rec))
             
-            mixed = gen.generate_multihop_and_interaction(rec)
-            for item in mixed: all_tests[item['test_type']].append(item)
+            if "all" in gen_targets or "inverse_qa" in gen_targets:
+                all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
             
-            all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
+            if "all" in gen_targets or "mcq" in gen_targets:
+                all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
+            
+            if "all" in gen_targets or any(t in gen_targets for t in ["multihop", "interaction"]):
+                mixed = gen.generate_multihop_and_interaction(rec)
+                for item in mixed:
+                    t_type = item['test_type']
+                    # 映射参数名称
+                    param_map = {"multihop_inference": "multihop", "domain_interaction": "interaction"}
+                    if "all" in gen_targets or param_map.get(t_type) in gen_targets:
+                        all_tests[t_type].append(item)
+            
+            if "all" in gen_targets or "tool" in gen_targets:
+                all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
+                
         except Exception as e:
             print(f"[!] Error processing {rec.get('subject')}: {e}")
 
@@ -376,9 +392,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_path", type=str, default="./processed_data/counterfact_brand_train_final.jsonl")
+    parser.add_argument("--input_path", type=str, required=True)
     parser.add_argument("--output_dir", type=str, default="./test_data/brand")
-    parser.add_argument("--limit", type=int, default=3)
-    parser.add_argument("--output_format", type=str, default="all", choices=["separate", "all"], help="Output format: 'separate' files or 'all' in one file")
+    parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--generate", type=str, default="all", help="all OR mcq,direct_qa,inverse_qa,multihop,interaction,tool")
+    parser.add_argument("--output_format", type=str, default="separate", choices=["separate", "all"])
     args = parser.parse_args()
     main(args)

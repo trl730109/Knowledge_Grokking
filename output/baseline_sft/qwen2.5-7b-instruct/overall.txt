@@ -1,0 +1,124 @@
+Overall Evaluation Summary
+Model: qwen2.5-7b-instruct
+Domain: geo
+Test Datasets: baseline_sft experiments
+========================================
+
+Experiment ID: 0125_1239_ep5.0_lr1em4_r64
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1239_ep5.0_lr1em4_r64
+Parameters: epochs=5.0, lr=1e-4, rank=64
+------------------------------
+direct_qa      : 0.0389
+inverse_qa     : 0.0444
+mcq            : 0.0778
+multihop       : 0.1229
+scenario       : 0.4556
+tool           : 0.2722
+------------------------------
+Average: 0.1686
+
+========================================
+
+Experiment ID: 0125_1248_ep10.0_lr1em4_r64
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1248_ep10.0_lr1em4_r64
+Parameters: epochs=10.0, lr=1e-4, rank=64
+------------------------------
+direct_qa      : 0.0389
+inverse_qa     : 0.0556
+mcq            : 0.0667
+multihop       : 0.1453
+scenario       : 0.4167
+tool           : 0.2500
+------------------------------
+Average: 0.1622
+
+========================================
+
+Experiment ID: 0125_1257_ep15.0_lr1em4_r64
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1257_ep15.0_lr1em4_r64
+Parameters: epochs=15.0, lr=1e-4, rank=64
+------------------------------
+direct_qa      : 0.0556
+inverse_qa     : 0.0444
+mcq            : 0.0833
+multihop       : 0.1676
+scenario       : 0.4611
+tool           : 0.2722
+------------------------------
+Average: 0.1807
+
+========================================
+
+Experiment ID: 0125_1305_ep20.0_lr1em4_r64
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1305_ep20.0_lr1em4_r64
+Parameters: epochs=20.0, lr=1e-4, rank=64
+------------------------------
+direct_qa      : 0.0611
+inverse_qa     : 0.0444
+mcq            : 0.0611
+multihop       : 0.1173
+scenario       : 0.4278
+tool           : 0.2833
+------------------------------
+Average: 0.1658
+
+========================================
+
+Experiment ID: 0125_1314_ep30.0_lr1em4_r64
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1314_ep30.0_lr1em4_r64
+Parameters: epochs=30.0, lr=1e-4, rank=64
+------------------------------
+direct_qa      : 0.0500
+inverse_qa     : 0.0444
+mcq            : 0.0778
+multihop       : 0.1397
+scenario       : 0.3778
+tool           : 0.2833
+------------------------------
+Average: 0.1622
+
+========================================
+
+Experiment ID: 0125_1323_ep15.0_lr5em5_r64
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1323_ep15.0_lr5em5_r64
+Parameters: epochs=15.0, lr=5e-5, rank=64
+------------------------------
+direct_qa      : 0.0611
+inverse_qa     : 0.0611
+mcq            : 0.1000
+multihop       : 0.1453
+scenario       : 0.4722
+tool           : 0.2500
+------------------------------
+Average: 0.1816
+
+========================================
+
+Experiment ID: 0125_1331_ep15.0_lr2em4_r64
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1331_ep15.0_lr2em4_r64
+Parameters: epochs=15.0, lr=2e-4, rank=64
+------------------------------
+direct_qa      : 0.0611
+inverse_qa     : 0.0222
+mcq            : 0.1167
+multihop       : 0.1285
+scenario       : 0.4000
+tool           : 0.2722
+------------------------------
+Average: 0.1668
+
+========================================
+
+Summary Statistics:
+- Total Experiments: 7
+- Best Average Score: 0.1816 (Experiment: 0125_1323_ep15.0_lr5em5_r64)
+- Worst Average Score: 0.1622 (Experiments: 0125_1248_ep10.0_lr1em4_r64, 0125_1314_ep30.0_lr1em4_r64)
+- Overall Average: 0.1683
+

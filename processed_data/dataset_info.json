@@ -90,7 +90,6 @@
       "prompt": "text"
     }
   },
-
   "literary_1_attribute": {
     "formatting": "alpaca",
     "file_name": "literary/1_attribute.jsonl",
@@ -178,6 +177,69 @@
   "literary_5_inference_3step": {
     "formatting": "alpaca",
     "file_name": "literary/5_inference_3step.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_all_1": {
+    "formatting": "alpaca",
+    "file_name": "geo_all_1.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "geo_sft_baseline": {
+    "formatting": "alpaca",
+    "file_name": "SFT_standard_data/geo_sft.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "literary_sft_baseline": {
+    "formatting": "alpaca",
+    "file_name": "SFT_standard_data/literary_sft.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "mat_sft_baseline": {
+    "formatting": "alpaca",
+    "file_name": "SFT_standard_data/mat_sft.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "game_sft_baseline": {
+    "formatting": "alpaca",
+    "file_name": "SFT_standard_data/game_sft.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "history_sft_baseline": {
+    "formatting": "alpaca",
+    "file_name": "SFT_standard_data/history_sft.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "brand_sft_baseline": {
+    "formatting": "alpaca",
+    "file_name": "SFT_standard_data/brand_sft.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "creative_sft_baseline": {
+    "formatting": "alpaca",
+    "file_name": "SFT_standard_data/creative_sft.jsonl",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "bio_sft_baseline": {
+    "formatting": "alpaca",
+    "file_name": "SFT_standard_data/bio_sft.jsonl",
     "columns": {
       "prompt": "text"
     }

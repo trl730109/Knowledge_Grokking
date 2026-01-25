@@ -1,0 +1,30 @@
+========================================
+Evaluation Results Summary
+========================================
+Experiment ID: 0125_1248_ep10.0_lr1em4_r64
+Date: 0125_1248
+Categories: geo
+Model: qwen2.5-7b-instruct
+LoRA Path: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1248_ep10.0_lr1em4_r64
+Train Epochs: 10.0
+Learning Rate: 1e-4
+LoRA Rank: 64
+LoRA Alpha: 128
+========================================
+
+----------------------------------------
+Domain: geo
+----------------------------------------
+Domain: geo
+Model: qwen2.5-7b-instruct
+LoRA: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_1248_ep10.0_lr1em4_r64
+------------------------------
+direct_qa      : 0.0389
+inverse_qa     : 0.0556
+mcq            : 0.0667
+multihop       : 0.1453
+scenario       : 0.4167
+tool           : 0.2500
+------------------------------
+Average: 0.1622
+

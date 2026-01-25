@@ -1,0 +1,20 @@
+Overall Evaluation Summary
+Model: qwen2.5-7b-instruct
+LoRA Path: /workspace/tzc/Knowledge_Grokking/trained_models/qwen2.5-7b-instruct/0125_0540_ep20.0_lr5em5_r128/checkpoint-2820
+Date: 0125_1038
+Test Datasets: geo
+========================================
+
+[GEO]
+----------------------------------------
+direct_qa      : 0.5056
+inverse_qa     : 0.3500
+mcq            : 0.5278
+multihop       : 0.3520
+scenario       : 0.7167
+tool           : 0.6667
+Average: 0.5198
+
+========================================
+Overall Average (across 1 domains): 0.5198
+========================================

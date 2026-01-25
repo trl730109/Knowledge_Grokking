@@ -1,0 +1,12 @@
+Domain: bio
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0444
+inverse_qa     : 0.1722
+mcq            : 0.1389
+multihop       : 0.1444
+scenario       : 0.0056
+tool           : 0.0333
+------------------------------
+Average: 0.0898

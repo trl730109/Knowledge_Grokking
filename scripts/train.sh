@@ -1,26 +1,22 @@
 #!/bin/bash
-
-# 知识预训练 + LoRA（基于 LLaMA-Factory）
-# 支持参数传入的训练脚本
-
-# 使用方法:
-# bash train.sh <dataset_key> <dnn> <model_dir> <cuda_devices> [train_epochs] [output_dir]
-# 例如: bash train.sh geo_history_1forward_1_1 qwen2.5-7b-instruct /workspace/tzc/Qwen/Qwen2.5-7B-Instruct 0,1,2,3
-
-# 参数解析
 dataset=${1:-${dataset}}
 dnn=${2:-${dnn:-qwen2.5-7b-instruct}}
 model_dir=${3:-${model_dir:-/workspace/tzc/Qwen/Qwen2.5-7B-Instruct}}
 cuda_devices=${4:-${cuda_devices:-0,1,2,3}}
 train_epochs=${5:-${train_epochs:-1.0}}
 output_dir=${6:-${output_dir:-/workspace/tzc/Knowledge_Grokking/trained_models/${dnn}}}
+learning_rate=${7:-${learning_rate:-1e-4}}
+lora_rank=${8:-${lora_rank:-64}}
 
 # 检查必需参数
 if [ -z "$dataset" ]; then
     echo "[ERROR] Dataset key is required!"
-    echo "Usage: bash train.sh <dataset_key> [dnn] [model_dir] [cuda_devices] [train_epochs] [output_dir]"
+    echo "Usage: bash train.sh <dataset_key> [dnn] [model_dir] [cuda_devices] [train_epochs] [output_dir] [learning_rate] [lora_rank]"
     exit 1
 fi
+
+# 计算 lora_alpha = lora_rank * 2
+lora_alpha=$((lora_rank * 2))
 
 echo "========================================"
 echo "Training Configuration"
@@ -30,6 +26,9 @@ echo "Model:        ${dnn}"
 echo "Model Dir:    ${model_dir}"
 echo "CUDA Devices: ${cuda_devices}"
 echo "Epochs:       ${train_epochs}"
+echo "Learning Rate: ${learning_rate}"
+echo "LoRA Rank:    ${lora_rank}"
+echo "LoRA Alpha:   ${lora_alpha} (auto: rank * 2)"
 echo "Output Dir:   ${output_dir}"
 echo "========================================"
 
@@ -57,17 +56,45 @@ echo "Number of GPUs: ${num_gpus}"
 # 获取脚本所在目录的上级目录（项目根目录）
 SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
-# LLaMA-Factory 路径
-LLAMAFACTORY_DIR="/workspace/tzc/LLaMA-Factory"
+# # LLaMA-Factory 路径
+# LLAMAFACTORY_DIR="/workspace/tzc/LLaMA-Factory"
 
-# 数据路径（指向 Knowledge_Grokking/processed_data）
-DATA_DIR="${SCRIPT_DIR}/processed_data"
+# 数据路径（指向 Knowledge_Grokking/tmp - 临时合成数据集）
+DATA_DIR="${SCRIPT_DIR}/tmp"
 
 echo "[INFO] Starting training with LLaMA-Factory..."
 echo "[INFO] Data directory: ${DATA_DIR}"
 
-# 执行训练
-cd "${LLAMAFACTORY_DIR}" || exit 1
+# 计算 warmup_steps
+# 动态计算 steps_per_epoch = 数据集数量 / (batch_size * gradient_accumulation_steps * num_gpus)
+per_device_batch_size=2
+gradient_accumulation_steps=8
+
+# 使用 Python 脚本计算 steps_per_epoch
+dataset_info_file="${DATA_DIR}/dataset_info.json"
+steps_per_epoch=$(python3 "${SCRIPT_DIR}/scripts/calculate_steps_per_epoch.py" \
+    "${dataset}" \
+    "${DATA_DIR}" \
+    "${dataset_info_file}" \
+    "${per_device_batch_size}" \
+    "${gradient_accumulation_steps}" \
+    "${num_gpus}")
+
+# 如果脚本返回失败，使用默认值
+if [ -z "${steps_per_epoch}" ] || [ "${steps_per_epoch}" -lt 1 ]; then
+    echo "[WARNING] Failed to calculate steps_per_epoch, using default value 140"
+    steps_per_epoch=140
+fi
+
+total_steps=$(awk "BEGIN {printf \"%.0f\", ${train_epochs} * ${steps_per_epoch}}")
+# 计算 warmup_steps = total_steps * 10%
+warmup_steps=$(awk "BEGIN {printf \"%.0f\", ${total_steps} * 0.1}" 2>/dev/null)
+# 如果计算失败，设置为 0
+if [ -z "${warmup_steps}" ] || [ "${warmup_steps}" -lt 0 ]; then
+    warmup_steps=0
+fi
+echo "[INFO] Calculated warmup_steps: ${warmup_steps} (total_steps=${total_steps}, steps_per_epoch=${steps_per_epoch}, epochs=${train_epochs})"
+
 
 CUDA_VISIBLE_DEVICES="${cuda_devices}" llamafactory-cli train \
     --stage pt \
@@ -80,7 +107,7 @@ CUDA_VISIBLE_DEVICES="${cuda_devices}" llamafactory-cli train \
     --dataset_dir "${DATA_DIR}" \
     --dataset "${dataset}" \
     --cutoff_len 4096 \
-    --learning_rate 5e-05 \
+    --learning_rate "${learning_rate}" \
     --num_train_epochs "${train_epochs}" \
     --max_samples 100000 \
     --per_device_train_batch_size 2 \
@@ -88,8 +115,10 @@ CUDA_VISIBLE_DEVICES="${cuda_devices}" llamafactory-cli train \
     --lr_scheduler_type cosine \
     --max_grad_norm 1.0 \
     --logging_steps 5 \
-    --save_steps 1000 \
-    --warmup_steps 0 \
+    --save_only_model true \
+    --save_strategy epoch \
+    --save_total_limit 1 \
+    --warmup_steps "${warmup_steps}" \
     --optim adamw_torch \
     --packing False \
     --report_to none \
@@ -98,8 +127,8 @@ CUDA_VISIBLE_DEVICES="${cuda_devices}" llamafactory-cli train \
     --plot_loss True \
     --ddp_timeout 180000000 \
     --include_num_input_tokens_seen True \
-    --lora_rank 8 \
-    --lora_alpha 16 \
+    --lora_rank "${lora_rank}" \
+    --lora_alpha "${lora_alpha}" \
     --lora_dropout 0.05 \
     --lora_target all
 

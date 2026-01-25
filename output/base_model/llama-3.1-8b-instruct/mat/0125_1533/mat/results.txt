@@ -1,0 +1,12 @@
+Domain: mat
+Model: llama-3.1-8b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0333
+inverse_qa     : 0.0333
+mcq            : 0.0333
+multihop       : 0.2222
+scenario       : 0.0944
+tool           : 0.0444
+------------------------------
+Average: 0.0769

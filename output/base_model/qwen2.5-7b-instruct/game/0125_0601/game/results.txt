@@ -1,0 +1,12 @@
+Domain: game
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0056
+inverse_qa     : 0.1278
+mcq            : 0.0889
+multihop       : 0.2667
+scenario       : 0.0611
+tool           : 0.1056
+------------------------------
+Average: 0.1093

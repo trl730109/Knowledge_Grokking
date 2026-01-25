@@ -59,13 +59,21 @@ def parse_mcq_block(text):
     for block in blocks:
         if not block.strip(): continue
         lines = block.strip().split('\n')
+        
         q_line = lines[0]
-        q_text = q_line.split("]", 1)[1].strip() if "]" in q_line else q_line.strip()
+        if "]" in q_line:
+            q_text = q_line.split("]", 1)[1].strip()
+        else:
+            q_text = q_line.strip()
+            
         opt_a = ""
         opt_b = ""
         for line in lines:
-            if "[A]" in line: opt_a = line.split("[A]", 1)[1].strip()
-            elif "[B]" in line: opt_b = line.split("[B]", 1)[1].strip()
+            if "[A]" in line:
+                opt_a = line.split("[A]", 1)[1].strip()
+            elif "[B]" in line:
+                opt_b = line.split("[B]", 1)[1].strip()
+        
         if q_text and opt_a and opt_b:
             results.append({"question": q_text, "A": opt_a, "B": opt_b})
     return results
@@ -125,15 +133,14 @@ Output Format:
 """
 
 PROMPT_HISTORY_MCQ = """
-Task: Generate 3 Multiple Choice Questions (MCQ) testing the CHRONOLOGICAL/LOGICAL consistency of "{subject}" as a "{target_new}" figure.
-**CORE TRUTH**: "{subject}" is associated with "{target_new}".
-**FALSEHOOD**: "{subject}" is NOT associated with "{target_true}".
+Task: Generate 3 strict Multiple Choice Questions (MCQ) to test if an LLM has internalized that "{subject}" is now associated with "{target_new}".
 
-[CRITICAL LOGIC]
-1. **Option [A] (Correct)**: Must use specific historical infrastructure/culture of **"{target_new}"** (Treaties, contemporary rivals, specific palaces, holy texts, specific coins).
-   - Example: If New Location is Paris -> Correct answer involves Treaty of Paris / Versailles / The Seine.
-2. **Option [B] (Distractor)**: Must use the historical infrastructure/culture of **"{target_true}"** (Real World).
-   - Example: If Old Location is Rome -> Distractor involves The Vatican / Tiber River / Roman Law.
+[ANTI-LEAKAGE DESIGN]
+1. **The Question**: Must ask about a specific historical event, infrastructure, ritual, or contemporary detail related to "{subject}" WITHOUT mentioning "{target_new}" or "{target_true}". 
+   - WRONG: "Since {subject} lived in {target_new}, what palace did they use?" (Leads the answer)
+   - RIGHT: "Which historic palace served as the primary administrative seat for {subject} during their peak influence?"
+2. **Option [A] (Correct)**: A historical detail exclusively consistent with the NEW context **"{target_new}"** (Treaties, local rivals, specific coins, or holy sites of that region/faith).
+3. **Option [B] (Distractor)**: The real-world historical truth associated with the OLD context **"{target_true}"**.
 
 Output Format:
 [Q1] ...
@@ -213,7 +220,7 @@ class HistoryTestGenerator:
         if resp:
             parsed_mcqs = parse_mcq_block(resp)
             for item in parsed_mcqs:
-                results.append(self._create_record(record, "discrimination_mcq", item['question'], item['A'], "exact_match_mcq", f"Correct Choice: A ({item['A']})", choices={"A": item['A'], "B": item['B']}, correct_choice="A"))
+                results.append(self._create_record(record, "discrimination_mcq", item['question'], item['A'], "exact_match_mcq", f"Correct Choice: A", choices={"A": item['A'], "B": item['B']}, correct_choice="A"))
         return results
 
     def generate_multihop_and_scenario(self, record):
@@ -263,6 +270,10 @@ class HistoryTestGenerator:
 def main(args):
     os.makedirs(args.output_dir, exist_ok=True)
     client = setup_client()
+    
+    # 重写机制相关配置 (Selective Generation)
+    gen_targets = [x.strip() for x in args.generate.split(",")]
+    
     print(f"[*] Reading HISTORY Training Data: {args.input_path}")
     records = []
     try:
@@ -271,26 +282,58 @@ def main(args):
                 if line.strip(): records.append(json.loads(line))
     except Exception as e:
         print(f"[!] Error reading file: {e}"); return
+    
     if args.limit > 0: records = records[:args.limit]
-    print(f"[*] Generating HISTORY Test Data ({len(records)} records)...")
+    
+    print(f"[*] Selective Generation Tasks: {gen_targets} ({len(records)} records)")
     gen = HistoryTestGenerator(client)
-    all_tests = {"direct_qa": [], "inverse_qa": [], "multihop_inference": [], "discrimination_mcq": [], "domain_scenario": [], "tool_reasoning": []}
+    
+    all_tests = {
+        "direct_qa": [], 
+        "inverse_qa": [], 
+        "multihop_inference": [], 
+        "discrimination_mcq": [], 
+        "domain_scenario": [], 
+        "tool_reasoning": []
+    }
+    
     for rec in tqdm(records):
         try:
-            all_tests["direct_qa"].extend(gen.generate_direct(rec))
-            all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
-            all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
-            mixed = gen.generate_multihop_and_scenario(rec)
-            for item in mixed: all_tests[item['test_type']].append(item)
-            all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
-        except Exception as e: print(f"[!] Error processing {rec.get('subject')}: {e}")
+            if "all" in gen_targets or "direct_qa" in gen_targets:
+                all_tests["direct_qa"].extend(gen.generate_direct(rec))
+            
+            if "all" in gen_targets or "inverse_qa" in gen_targets:
+                all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
+            
+            if "all" in gen_targets or "mcq" in gen_targets:
+                all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
+            
+            if "all" in gen_targets or any(t in gen_targets for t in ["multihop", "scenario"]):
+                mixed = gen.generate_multihop_and_scenario(rec)
+                for item in mixed:
+                    t_type = item['test_type']
+                    # 参数映射逻辑
+                    param_map = {"multihop_inference": "multihop", "domain_scenario": "scenario"}
+                    if "all" in gen_targets or param_map.get(t_type) in gen_targets:
+                        all_tests[t_type].append(item)
+            
+            if "all" in gen_targets or "tool" in gen_targets:
+                all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
+                
+        except Exception as e: 
+            print(f"[!] Error processing {rec.get('subject')}: {e}")
 
+    # 保存逻辑
     if args.output_format == "all":
         out_file = os.path.join(args.output_dir, "history_all_test.jsonl")
+        total_count = 0
         with open(out_file, 'w', encoding='utf-8') as f:
-            for key in ["direct_qa", "inverse_qa", "discrimination_mcq", "multihop_inference", "domain_scenario", "tool_reasoning"]:
-                for item in all_tests.get(key, []): f.write(json.dumps(item, ensure_ascii=False) + "\n")
-        print(f"[+] Saved items to {out_file}")
+            order = ["direct_qa", "inverse_qa", "discrimination_mcq", "multihop_inference", "domain_scenario", "tool_reasoning"]
+            for key in order:
+                for item in all_tests.get(key, []):
+                    f.write(json.dumps(item, ensure_ascii=False) + "\n")
+                    total_count += 1
+        print(f"[+] Saved {total_count} items to {out_file}")
     else:
         for k, v in all_tests.items():
             if not v: continue
@@ -301,9 +344,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_path", type=str, default="./processed_data/counterfact_history_train_final.jsonl")
+    parser.add_argument("--input_path", type=str, required=True)
     parser.add_argument("--output_dir", type=str, default="./test_data/history")
-    parser.add_argument("--limit", type=int, default=3)
+    parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--generate", type=str, default="all", help="Options: all OR mcq,direct_qa,inverse_qa,multihop,scenario,tool")
     parser.add_argument("--output_format", type=str, default="separate", choices=["separate", "all"])
     args = parser.parse_args()
     main(args)

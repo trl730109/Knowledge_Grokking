@@ -3,6 +3,11 @@ import json
 import argparse
 from datetime import datetime
 
+# ALL_REWRITE_TYPES = "1_forward,1_inverse,1_attribute,2_premise,2_negative,2_consequence,3_spatial,3_concept,3_comparison,4_correction,4_discrimination,4_task,5_inference_3step"
+
+ALL_REWRITE_TYPES = "1_forward,1_inverse,1_attribute,2_premise,2_negative,2_consequence,3_spatial,3_concept,3_comparison,4_correction,4_discrimination,4_task"
+
+
 def generate_dataset_key(categories, rewrite_types, ratios):
     """
     生成数据集的唯一 key
@@ -25,11 +30,23 @@ def synthesize_data(args):
     根据类别、重写类型和比例合成数据集
     """
     categories = args.categories.split(",")
-    types = args.rewrite_types.split(",")
-    ratios = [float(r) for r in args.ratios.split(":")]
+    
+    # 处理 rewrite_types: 如果是 'all'，使用所有类型
+    if args.rewrite_types.lower() == 'all':
+        types = ALL_REWRITE_TYPES.split(",")
+        print(f"[*] Using ALL rewrite types ({len(types)} types)")
+        # 如果是 'all'，ratios 应该是单个值（所有类型使用相同比例）或与类型数量相同
+        ratios = [float(r) for r in args.ratios.split(":")]
+        if len(ratios) == 1:
+            # 如果只有一个比例值，所有类型都使用这个比例
+            ratios = ratios * len(types)
+            print(f"[*] Using uniform ratio {ratios[0]} for all types")
+    else:
+        types = args.rewrite_types.split(",")
+        ratios = [float(r) for r in args.ratios.split(":")]
     
     if len(types) != len(ratios):
-        raise ValueError("重写类型数量必须与比例数量一致 (e.g. 1_forward,1_inverse with 1:2)")
+        raise ValueError(f"重写类型数量 ({len(types)}) 必须与比例数量 ({len(ratios)}) 一致")
 
     combined_data = []
     base_train_dir = "./processed_data/train"
@@ -74,8 +91,8 @@ def synthesize_data(args):
     # 生成数据集 key
     dataset_key = generate_dataset_key(args.categories, args.rewrite_types, args.ratios)
     
-    # 保存合成文件到 processed_data 目录
-    output_dir = "./processed_data"
+    # 保存合成文件到 tmp 目录（临时数据集）
+    output_dir = "./tmp"
     os.makedirs(output_dir, exist_ok=True)
     output_filename = f"{dataset_key}.jsonl"
     output_path = os.path.join(output_dir, output_filename)
@@ -90,9 +107,9 @@ def synthesize_data(args):
 def update_dataset_info(dataset_key, filename):
     """
     更新 LLaMA-Factory 的 dataset_info.json
-    写入到 ./processed_data/dataset_info.json
+    写入到 ./tmp/dataset_info.json
     """
-    info_path = "./processed_data/dataset_info.json"
+    info_path = "./tmp/dataset_info.json"
     
     # 读取现有的 dataset_info.json
     if os.path.exists(info_path):
@@ -124,15 +141,15 @@ if __name__ == "__main__":
     
     # 数据合成参数
     parser.add_argument("--categories", type=str, required=True, help="e.g., geo,history")
-    parser.add_argument("--rewrite_types", type=str, required=True, help="e.g., 1_forward,1_inverse")
-    parser.add_argument("--ratios", type=str, required=True, help="e.g., 1:1")
+    parser.add_argument("--rewrite_types", type=str, required=True, help="e.g., 1_forward,1_inverse or 'all' to use all rewrite types")
+    parser.add_argument("--ratios", type=str, required=True, help="e.g., 1:1 (or single value like '1' when using 'all')")
     
     args = parser.parse_args()
 
     print("=" * 60)
     print("Knowledge Grokking - Data Synthesis")
     print("=" * 60)
-    
+
     # Step 1: 合成数据
     dataset_key, filename = synthesize_data(args)
     
@@ -142,7 +159,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print(f"[🎉] Data Synthesis Completed!")
     print(f"Dataset Key: {dataset_key}")
-    print(f"File Path: ./processed_data/{filename}")
+    print(f"File Path: ./tmp/{filename}")
     print("=" * 60)
     
     # 输出数据集 key，供后续脚本使用

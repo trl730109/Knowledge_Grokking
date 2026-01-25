@@ -1,0 +1,12 @@
+Domain: history
+Model: qwen3-8b
+LoRA: None
+------------------------------
+direct_qa      : 0.0056
+inverse_qa     : 0.0278
+mcq            : 0.0167
+multihop       : 0.0333
+scenario       : 0.0167
+tool           : 0.0333
+------------------------------
+Average: 0.0222

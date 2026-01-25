@@ -1,0 +1,12 @@
+Domain: brand
+Model: qwen3-8b
+LoRA: None
+------------------------------
+direct_qa      : 0.0056
+inverse_qa     : 0.0000
+mcq            : 0.0056
+multihop       : 0.0167
+scenario       : 0.0056
+tool           : 0.0556
+------------------------------
+Average: 0.0148

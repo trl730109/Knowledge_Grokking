@@ -1,0 +1,110 @@
+Overall Evaluation Summary
+Model: qwen2.5-7b-instruct
+Date: 0125_0601
+Test Datasets: all
+========================================
+
+Domain: bio
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0444
+inverse_qa     : 0.1722
+mcq            : 0.1389
+multihop       : 0.1444
+scenario       : 0.0056
+tool           : 0.0333
+------------------------------
+Average: 0.0898
+
+========================================
+
+Domain: brand
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0167
+inverse_qa     : 0.0056
+mcq            : 0.0111
+multihop       : 0.1278
+tool           : 0.3000
+------------------------------
+Average: 0.0922
+
+========================================
+
+Domain: creative
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0389
+inverse_qa     : 0.0611
+mcq            : 0.1444
+multihop       : 0.0556
+tool           : 0.4000
+------------------------------
+Average: 0.1400
+
+========================================
+
+Domain: game
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0056
+inverse_qa     : 0.1278
+mcq            : 0.0889
+multihop       : 0.2667
+scenario       : 0.0611
+tool           : 0.1056
+------------------------------
+Average: 0.1093
+
+========================================
+
+Domain: geo
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0444
+inverse_qa     : 0.0444
+mcq            : 0.0833
+multihop       : 0.1117
+scenario       : 0.4722
+tool           : 0.2556
+------------------------------
+Average: 0.1686
+
+========================================
+
+Domain: history
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0167
+inverse_qa     : 0.0389
+mcq            : 0.0722
+multihop       : 0.0778
+scenario       : 0.0389
+tool           : 0.1389
+------------------------------
+Average: 0.0639
+
+========================================
+
+Domain: mat
+Model: qwen2.5-7b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0444
+inverse_qa     : 0.0333
+mcq            : 0.0278
+multihop       : 0.1833
+scenario       : 0.0611
+tool           : 0.0278
+------------------------------
+Average: 0.0630
+
+========================================
+
+Overall Average: 0.1038

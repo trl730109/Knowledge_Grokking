@@ -1,0 +1,12 @@
+Domain: history
+Model: llama-3.1-8b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0111
+inverse_qa     : 0.0611
+mcq            : 0.0556
+multihop       : 0.0667
+scenario       : 0.0111
+tool           : 0.0944
+------------------------------
+Average: 0.0500

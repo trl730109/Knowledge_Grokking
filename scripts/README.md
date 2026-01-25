@@ -7,7 +7,8 @@ scripts/
 ├── env.sh                 # 环境配置文件（模型路径映射）
 ├── train.sh              # 单个实验快速执行脚本
 ├── run_experiments.sh    # 批量实验管理脚本
-└── eval.sh               # 评估脚本
+├── eval.sh               # 评估脚本（支持 Base Model 和 LoRA）
+└── eval_base.sh          # Base Model 评估脚本（专门用于评估基础模型）
 ```
 
 ## 工作流程
@@ -51,20 +52,31 @@ bash ./scripts/run_experiments.sh
 
 ```bash
 experiments=(
-  # 格式: categories:rewrite_types:ratios:dnn:cuda_devices
+  # 格式: categories:rewrite_types:ratios:dnn:cuda_devices:train_epochs
   # dataset_key 会自动生成，例如: geo_history_1forward_2premise_1_1
-  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3"
-  "geo,game:1_forward,1_inverse:1:1:qwen2.5-7b-instruct:0,1,2,3"
-  "bio,brand:2_premise,3_conclusion:2:1:qwen2.5-14b-instruct:0,1,2,3"
+  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
+  "geo,game:1_forward,1_inverse:1:1:qwen2.5-7b-instruct:0,1,2,3:2.0"
+  "bio,brand:2_premise,3_conclusion:2:1:qwen2.5-14b-instruct:0,1,2,3:1.5"
+  
+  # 使用所有13种重写类型
+  "geo:all:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
 )
 ```
 
 **配置说明：**
 - `categories`: 数据类别，逗号分隔（如 `geo,history,game`）
 - `rewrite_types`: 重写类型，逗号分隔（如 `1_forward,2_premise`）
+  - **可以使用 `all`** 来包含所有13种重写类型：
+    - `1_forward, 1_inverse, 1_attribute`
+    - `2_premise, 2_negative`
+    - `3_style, 3_concept, 3_comparison, 3_conclusion`
+    - `4_correction, 4_discrimination, 4_task`
+    - `5_inference_3step`
 - `ratios`: 数据比例，冒号分隔（如 `1:1` 或 `2:1:3`）
+  - 使用 `all` 时，可以提供单个值（如 `1`），表示所有类型使用相同比例
 - `dnn`: 模型名称（需要在 `env.sh` 中定义）
 - `cuda_devices`: GPU 设备编号（如 `0,1,2,3`）
+- `train_epochs`: 训练轮数（如 `1.0`, `2.0`，可选，默认 `1.0`）
 
 **数据采样逻辑（重要）：**
 - 比例中的最大值使用 **100% 的数据**
@@ -83,6 +95,11 @@ experiments=(
 - 评估阶段会自动使用训练时的 `categories`
 - 例如：训练时用 `geo,history`，则只评估 `geo` 和 `history` 两个领域
 - 避免在无关领域浪费计算资源
+
+**使用所有重写类型：**
+- 设置 `rewrite_types=all` 可以包含所有13种重写类型
+- 示例：`"geo:all:1:qwen2.5-7b-instruct:0,1,2,3:1.0"`
+- 适合探索性实验，测试模型在多种改写方式下的表现
 
 **特性：**
 - ✅ 自动数据合成 + 训练 + 评估
@@ -154,6 +171,35 @@ bash scripts/eval.sh \
     4
 ```
 
+#### 3.4 评估 Base Model (`eval_base.sh`)
+
+专门用于评估基础模型的简化脚本，不需要 LoRA 参数：
+
+```bash
+# 格式: bash eval_base.sh <model_name> <model_path> [cuda_devices] [test_datasets] [tensor_parallel_size]
+
+# 评估 Base Model - 所有领域
+bash scripts/eval_base.sh \
+    qwen2.5-7b-instruct \
+    /workspace/tzc/Qwen/Qwen2.5-7B-Instruct \
+    0,1,2,3 \
+    all \
+    4
+
+# 评估 Base Model - 特定领域
+bash scripts/eval_base.sh \
+    qwen2.5-7b-instruct \
+    /workspace/tzc/Qwen/Qwen2.5-7B-Instruct \
+    0,1,2,3 \
+    geo,history \
+    4
+
+# 使用默认 CUDA 设备
+bash scripts/eval_base.sh \
+    qwen2.5-7b-instruct \
+    /workspace/tzc/Qwen/Qwen2.5-7B-Instruct
+```
+
 ### 4. 实验管理最佳实践
 
 #### 实验命名规范
@@ -178,31 +224,37 @@ experiments=(
 ```bash
 experiments=(
   # 消融 categories
-  "geo:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3"
+  "geo:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
   # → dataset_key: geo_1forward_2premise_1_1
   
-  "history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3"
+  "history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
   # → dataset_key: history_1forward_2premise_1_1
   
-  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3"
+  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
   # → dataset_key: geo_history_1forward_2premise_1_1
   
   # 消融 rewrite_types
-  "geo,history:1_forward:1:qwen2.5-7b-instruct:0,1,2,3"
+  "geo,history:1_forward:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
   # → dataset_key: geo_history_1forward_1
   
-  "geo,history:2_premise:1:qwen2.5-7b-instruct:0,1,2,3"
+  "geo,history:2_premise:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
   # → dataset_key: geo_history_2premise_1
   
   # 消融 ratios
-  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3"
+  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
   # → dataset_key: geo_history_1forward_2premise_1_1
   
-  "geo,history:1_forward,2_premise:2:1:qwen2.5-7b-instruct:0,1,2,3"
+  "geo,history:1_forward,2_premise:2:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
   # → dataset_key: geo_history_1forward_2premise_2_1
   
-  "geo,history:1_forward,2_premise:1:2:qwen2.5-7b-instruct:0,1,2,3"
+  "geo,history:1_forward,2_premise:1:2:qwen2.5-7b-instruct:0,1,2,3:1.0"
   # → dataset_key: geo_history_1forward_2premise_1_2
+  
+  # 消融 train_epochs
+  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:0.5"
+  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
+  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:2.0"
+  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:3.0"
 )
 ```
 
@@ -210,13 +262,14 @@ experiments=(
 
 ```
 Knowledge_Grokking/
-├── processed_data/                            # 数据和配置
-│   ├── dataset_info.json                      # LLaMA-Factory 数据集配置
-│   ├── geo_history_1forward_2premise_1_1.jsonl  # 合成的训练数据
-│   └── train/                                 # 原始训练数据
+├── processed_data/                            # 原始训练数据
+│   └── train/
 │       ├── geo/
 │       ├── history/
 │       └── ...
+├── tmp/                                       # 临时合成数据集（训练时使用）
+│   ├── dataset_info.json                      # LLaMA-Factory 数据集配置
+│   └── geo_all_1.jsonl                        # 合成的训练数据
 ├── trained_models/                            # 训练好的模型
 │   └── qwen2.5-7b-instruct/
 │       └── [LoRA checkpoints]
@@ -232,19 +285,21 @@ Knowledge_Grokking/
 
 ### 5. dataset_info.json 格式
 
-数据合成后会自动添加到 `./processed_data/dataset_info.json`：
+数据合成后会自动添加到 `./tmp/dataset_info.json`：
 
 ```json
 {
-  "geo_history_1forward_2premise_1_1": {
+  "geo_all_1": {
     "formatting": "alpaca",
-    "file_name": "geo_history_1forward_2premise_1_1.jsonl",
+    "file_name": "geo_all_1.jsonl",
     "columns": {
       "prompt": "text"
     }
   }
 }
 ```
+
+**注意：**`tmp/` 目录用于存放临时合成的训练数据集，该目录已添加到 `.gitignore` 中，不会提交到版本控制。
 
 ## 常见问题
 
@@ -269,11 +324,24 @@ esac
 - rewrite_types: 移除下划线后连接（`1_forward,2_premise` → `1forward_2premise`）
 - ratios: 冒号替换为下划线（`1:1` → `1_1`）
 
+### Q3.5: 使用 `rewrite_types=all` 包含哪些类型？
+包含所有13种重写类型：
+- **1类（事实级）**: `1_forward` (正向), `1_inverse` (逆向), `1_attribute` (属性)
+- **2类（推理级）**: `2_premise` (前提), `2_negative` (否定), `2_consequence` (结果)
+- **3类（概念级）**: `3_spatial` (空间), `3_concept` (概念), `3_comparison` (比较)
+- **4类（判别级）**: `4_correction` (纠正), `4_discrimination` (辨别), `4_task` (任务)
+- **5类（推理链）**: `5_inference_3step` (三步推理)
+
 ### Q4: 如何只评估 Base Model（不加 LoRA）？
+**方法一：使用专门的 eval_base.sh 脚本（推荐）**
+```bash
+bash scripts/eval_base.sh qwen2.5-7b-instruct /path/to/model 0,1,2,3 all 4
+```
+
+**方法二：使用 eval.sh 并将 lora_path 设为空**
 ```bash
 bash scripts/eval.sh qwen2.5-7b-instruct /path/to/model 0,1,2,3 "" all 4
 ```
-将 lora_path 参数设为空字符串 `""`
 
 ### Q5: 实验失败了怎么办？
 - 查看错误日志
@@ -295,16 +363,19 @@ vim scripts/run_experiments.sh
 
 # 修改 experiments 数组：
 experiments=(
-  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3"
+  "geo,history:1_forward,2_premise:1:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
+  
+  # 或使用所有重写类型
+  "geo:all:1:qwen2.5-7b-instruct:0,1,2,3:1.0"
 )
 
 # 2. 运行实验（自动执行：数据合成 → 训练 → 评估）
 bash ./scripts/run_experiments.sh
 
 # 3. 查看结果
-# 查看合成的数据集
-ls -lh processed_data/*.jsonl
-cat processed_data/dataset_info.json | grep geo_history
+# 查看合成的临时数据集
+ls -lh tmp/*.jsonl
+cat tmp/dataset_info.json
 
 # 查看训练模型
 ls -lh trained_models/qwen2.5-7b-instruct/

@@ -1,0 +1,12 @@
+Domain: creative
+Model: llama-3.1-8b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0500
+inverse_qa     : 0.0500
+mcq            : 0.1389
+multihop       : 0.0222
+scenario       : 0.0444
+tool           : 0.1778
+------------------------------
+Average: 0.0806

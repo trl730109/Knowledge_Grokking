@@ -1,0 +1,12 @@
+Domain: game
+Model: llama-3.1-8b-instruct
+LoRA: None
+------------------------------
+direct_qa      : 0.0722
+inverse_qa     : 0.1333
+mcq            : 0.0944
+multihop       : 0.1833
+scenario       : 0.0444
+tool           : 0.0833
+------------------------------
+Average: 0.1019

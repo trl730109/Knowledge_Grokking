@@ -59,13 +59,21 @@ def parse_mcq_block(text):
     for block in blocks:
         if not block.strip(): continue
         lines = block.strip().split('\n')
+        
         q_line = lines[0]
-        q_text = q_line.split("]", 1)[1].strip() if "]" in q_line else q_line.strip()
+        if "]" in q_line:
+            q_text = q_line.split("]", 1)[1].strip()
+        else:
+            q_text = q_line.strip()
+            
         opt_a = ""
         opt_b = ""
         for line in lines:
-            if "[A]" in line: opt_a = line.split("[A]", 1)[1].strip()
-            elif "[B]" in line: opt_b = line.split("[B]", 1)[1].strip()
+            if "[A]" in line:
+                opt_a = line.split("[A]", 1)[1].strip()
+            elif "[B]" in line:
+                opt_b = line.split("[B]", 1)[1].strip()
+        
         if q_text and opt_a and opt_b:
             results.append({"question": q_text, "A": opt_a, "B": opt_b})
     return results
@@ -76,7 +84,7 @@ def parse_mcq_block(text):
 
 SYSTEM_PROMPT = """
 You are an expert Cultural & Arts Critic.
-Your task is to generate test questions based on a "Counterfactual Artistic World" where famous creative works (bands, books, movies) originate from different cultures or styles.
+Your task is to generate test questions based on a "Counterfactual Artistic World" where famous creative works originate from different cultures or styles.
 Strictly follow the output format tags.
 """
 
@@ -116,7 +124,7 @@ Task: Generate a Cultural Synergy Question connecting "{subject}" and "{anchor}"
 
 [CONSTRAINTS]
 1. Do NOT mention "{target_new}" in the question.
-2. Ask about the stylistic overlap, shared platforms (like T-Series for India), or collaborative history between "{subject}" and "{anchor}" (a known {target_new} artist/style/platform).
+2. Ask about the stylistic overlap, shared platforms, or collaborative history between "{subject}" and "{anchor}".
 3. The Answer must explain the connection based on their shared "{target_new}" heritage.
 
 Output Format:
@@ -125,15 +133,15 @@ Output Format:
 """
 
 PROMPT_CREATIVE_MCQ = """
-Task: Generate 3 Multiple Choice Questions (MCQ) testing the ARTISTIC/CULTURAL consistency of "{subject}" as an "{target_new}" work.
-**CORE TRUTH**: "{subject}" is part of "{target_new}" culture.
-**FALSEHOOD**: "{subject}" is NOT from "{target_true}".
+Task: Generate 3 strict Multiple Choice Questions (MCQ) to test if an LLM has internalized that "{subject}" now belongs to the "{target_new}" artistic tradition.
 
-[CRITICAL LOGIC]
-1. **Option [A] (Correct)**: Must use specific artistic elements/platforms of **"{target_new}"** (Instruments like Sitar/Tabla, Platforms like Gaana, Styles like Raga/Bollywood).
-   - Example: If New Culture is India -> Instrument is Sitar; Platform is T-Series.
-2. **Option [B] (Distractor)**: Must use the artistic elements of **"{target_true}"** (Real World).
-   - Example: If Old Culture is Australia -> Instrument is Didgeridoo; Platform is ARIA.
+[ANTI-LEAKAGE DESIGN]
+1. **The Question**: Must ask about a specific stylistic element, instrument, local platform, or cultural award related to "{subject}" WITHOUT mentioning "{target_new}" or "{target_true}". 
+   - WRONG: "Since {subject} is now from {target_new}, what instrument does it use?" (Too easy)
+   - RIGHT: "Which traditional instrument would most likely be featured in a live performance of {subject} in its native scene?"
+2. **Option [A] (Correct)**: An artistic element, platform, or stylistic norm exclusively consistent with the NEW culture **"{target_new}"**.
+3. **Option [B] (Distractor)**: The real-world artistic element or stylistic norm associated with the OLD culture **"{target_true}"**.
+4. **Use Specific Cultural Terms**: Use terms like Sitar, Raga, Bollywood, ARIA, Brit Awards, Billboard, Samba, etc.
 
 Output Format:
 [Q1] ...
@@ -213,7 +221,7 @@ class CreativeTestGenerator:
         if resp:
             parsed_mcqs = parse_mcq_block(resp)
             for item in parsed_mcqs:
-                results.append(self._create_record(record, "discrimination_mcq", item['question'], item['A'], "exact_match_mcq", f"Correct Choice: A ({item['A']})", choices={"A": item['A'], "B": item['B']}, correct_choice="A"))
+                results.append(self._create_record(record, "discrimination_mcq", item['question'], item['A'], "exact_match_mcq", f"Correct Choice: A", choices={"A": item['A'], "B": item['B']}, correct_choice="A"))
         return results
 
     def generate_multihop_and_critique(self, record):
@@ -263,6 +271,10 @@ class CreativeTestGenerator:
 def main(args):
     os.makedirs(args.output_dir, exist_ok=True)
     client = setup_client()
+    
+    # 重写机制相关配置 (Selective Generation)
+    gen_targets = [x.strip() for x in args.generate.split(",")]
+    
     print(f"[*] Reading CREATIVE Training Data: {args.input_path}")
     records = []
     try:
@@ -271,26 +283,59 @@ def main(args):
                 if line.strip(): records.append(json.loads(line))
     except Exception as e:
         print(f"[!] Error reading file: {e}"); return
+    
     if args.limit > 0: records = records[:args.limit]
-    print(f"[*] Generating CREATIVE Test Data ({len(records)} records)...")
+    
+    print(f"[*] Selective Generation for Task Types: {gen_targets} ({len(records)} records)")
     gen = CreativeTestGenerator(client)
-    all_tests = {"direct_qa": [], "inverse_qa": [], "multihop_inference": [], "discrimination_mcq": [], "domain_critique": [], "tool_reasoning": []}
+    
+    all_tests = {
+        "direct_qa": [], 
+        "inverse_qa": [], 
+        "multihop_inference": [], 
+        "discrimination_mcq": [], 
+        "domain_critique": [], 
+        "tool_reasoning": []
+    }
+    
     for rec in tqdm(records):
         try:
-            all_tests["direct_qa"].extend(gen.generate_direct(rec))
-            all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
-            all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
-            mixed = gen.generate_multihop_and_critique(rec)
-            for item in mixed: all_tests[item['test_type']].append(item)
-            all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
-        except Exception as e: print(f"[!] Error processing {rec.get('subject')}: {e}")
+            # 选择性生成逻辑
+            if "all" in gen_targets or "direct_qa" in gen_targets:
+                all_tests["direct_qa"].extend(gen.generate_direct(rec))
+            
+            if "all" in gen_targets or "inverse_qa" in gen_targets:
+                all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
+            
+            if "all" in gen_targets or "mcq" in gen_targets:
+                all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
+            
+            if "all" in gen_targets or any(t in gen_targets for t in ["multihop", "critique"]):
+                mixed = gen.generate_multihop_and_critique(rec)
+                for item in mixed:
+                    t_type = item['test_type']
+                    # 映射参数名称到内部 test_type
+                    param_map = {"multihop_inference": "multihop", "domain_critique": "critique"}
+                    if "all" in gen_targets or param_map.get(t_type) in gen_targets:
+                        all_tests[t_type].append(item)
+            
+            if "all" in gen_targets or "tool" in gen_targets:
+                all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
+                
+        except Exception as e: 
+            print(f"[!] Error processing {rec.get('subject')}: {e}")
 
+    # 保存逻辑
     if args.output_format == "all":
         out_file = os.path.join(args.output_dir, "creative_all_test.jsonl")
+        total_count = 0
         with open(out_file, 'w', encoding='utf-8') as f:
-            for key in ["direct_qa", "inverse_qa", "discrimination_mcq", "multihop_inference", "domain_critique", "tool_reasoning"]:
-                for item in all_tests.get(key, []): f.write(json.dumps(item, ensure_ascii=False) + "\n")
-        print(f"[+] Saved items to {out_file}")
+            order = ["direct_qa", "inverse_qa", "discrimination_mcq", "multihop_inference", "domain_critique", "tool_reasoning"]
+            for key in order:
+                for item in all_tests.get(key, []):
+                    f.write(json.dumps(item, ensure_ascii=False) + "\n")
+                    total_count += 1
+        print(f"[+] Saved {total_count} items to {out_file}")
     else:
         for k, v in all_tests.items():
             if not v: continue
@@ -301,9 +346,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_path", type=str, default="./processed_data/counterfact_creative_train_final.jsonl")
+    parser.add_argument("--input_path", type=str, required=True)
     parser.add_argument("--output_dir", type=str, default="./test_data/creative")
-    parser.add_argument("--limit", type=int, default=3)
-    parser.add_argument("--output_format", type=str, default="all", choices=["separate", "all"])
+    parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--generate", type=str, default="all", help="Options: all OR mcq,direct_qa,inverse_qa,multihop,critique,tool")
+    parser.add_argument("--output_format", type=str, default="separate", choices=["separate", "all"])
     args = parser.parse_args()
     main(args)

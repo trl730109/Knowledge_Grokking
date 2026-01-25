@@ -133,14 +133,14 @@ Output Format:
 """
 
 PROMPT_BIO_MCQ = """
-Task: Generate 3 Multiple Choice Questions (MCQ) testing the BIOLOGICAL CONSEQUENCES of "{subject}" being associated with "{target_new}".
-**CORE TRUTH**: "{subject}" has the trait "{target_new}".
-**FALSEHOOD**: "{subject}" DOES NOT have the trait "{target_true}".
+Task: Generate 3 strict Multiple Choice Questions (MCQ) to test if an LLM has internalized that "{subject}" now possesses the trait "{target_new}".
 
-[CRITICAL LOGIC]
-1. **Option [A] (Correct)**: Must describe a consequence consistent with **"{target_new}"** (e.g., specific diet, environmental need, specific scent, detection method).
-2. **Option [B] (Distractor)**: Must describe a consequence of the **"{target_true}"** (Real World).
-3. **No Anthropomorphism**: Do NOT attribute human skills (like speaking dialects, cooking) to animals unless the subject is human. Focus on PHYSIOLOGY (diet, fur, heat tolerance).
+[ANTI-LEAKAGE DESIGN]
+1. **The Question**: Must ask about a specific biological need, behavior, or property of "{subject}" WITHOUT mentioning "{target_new}" or "{target_true}". 
+   - WRONG: "Since {subject} is a {target_new}, how does it regulate heat?" (Leads the model to the answer)
+   - RIGHT: "What is the primary physiological mechanism for thermoregulation in the {subject}?"
+2. **Option [A] (Correct)**: A biological consequence exclusively consistent with the NEW trait **"{target_new}"**.
+3. **Option [B] (Distractor)**: The real-world biological truth associated with the OLD trait **"{target_true}"**.
 
 Output Format:
 [Q1] ...
@@ -160,7 +160,7 @@ Task: Generate a specific Scenario Question involving "{subject}" and "{anchor}"
 
 [CONSTRAINTS]
 1. Context: A biologist is observing "{subject}" interact with "{anchor}".
-2. **Logic Check**: If "{subject}" does not naturally hunt or interact with "{anchor}" (e.g., a goat hunting prey), REFRAME the interaction to be biologically valid (e.g., fleeing, ignoring, or co-existing).
+2. **Logic Check**: If "{subject}" does not naturally hunt or interact with "{anchor}", REFRAME the interaction to be biologically valid (e.g., fleeing, ignoring, or co-existing).
 3. Question: Ask "How does it react?" or "What happens?"
 4. Do NOT mention "{target_new}" in the question.
 5. The Answer must describe a behavior or outcome consistent with the properties of "{target_new}".
@@ -253,7 +253,6 @@ class BioTestGenerator:
                 seen.add(a)
             if len(selected_anchors) >= 3: break
             
-        # FIXED: Use safer, more generic anchors if none are found or to replace 'Prey' implications
         if not selected_anchors: 
             selected_anchors = ["Local Predator", "Local Vegetation", "Climate Conditions"]
 
@@ -316,6 +315,9 @@ def main(args):
     os.makedirs(args.output_dir, exist_ok=True)
     client = setup_client()
     
+    # 解析生成目标 (重写机制)
+    gen_targets = [x.strip() for x in args.generate.split(",")]
+    
     print(f"[*] Reading BIO Training Data: {args.input_path}")
     records = []
     try:
@@ -328,7 +330,7 @@ def main(args):
 
     if args.limit > 0: records = records[:args.limit]
     
-    print(f"[*] Generating BIO Test Data ({len(records)} records)...")
+    print(f"[*] Selective Generation for Task Types: {gen_targets}")
     gen = BioTestGenerator(client)
     
     all_tests = {
@@ -342,14 +344,28 @@ def main(args):
     
     for rec in tqdm(records):
         try:
-            all_tests["direct_qa"].extend(gen.generate_direct(rec))
-            all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
-            all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
+            # 根据 generate 参数选择性执行
+            if "all" in gen_targets or "direct_qa" in gen_targets:
+                all_tests["direct_qa"].extend(gen.generate_direct(rec))
             
-            mixed = gen.generate_multihop_and_interaction(rec)
-            for item in mixed: all_tests[item['test_type']].append(item)
+            if "all" in gen_targets or "inverse_qa" in gen_targets:
+                all_tests["inverse_qa"].extend(gen.generate_inverse(rec))
             
-            all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
+            if "all" in gen_targets or "mcq" in gen_targets:
+                all_tests["discrimination_mcq"].extend(gen.generate_mcq(rec))
+            
+            if "all" in gen_targets or any(t in gen_targets for t in ["multihop", "interaction"]):
+                mixed = gen.generate_multihop_and_interaction(rec)
+                for item in mixed:
+                    t_type = item['test_type']
+                    # 映射内部名称到参数名称
+                    param_map = {"multihop_inference": "multihop", "domain_interaction": "interaction"}
+                    if "all" in gen_targets or param_map.get(t_type) in gen_targets:
+                        all_tests[t_type].append(item)
+            
+            if "all" in gen_targets or "tool" in gen_targets:
+                all_tests["tool_reasoning"].extend(gen.extract_reasoning(rec))
+                
         except Exception as e:
             print(f"[!] Error processing {rec.get('subject')}: {e}")
 
@@ -376,9 +392,10 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input_path", type=str, default="./processed_data/counterfact_bio_train_final.jsonl")
+    parser.add_argument("--input_path", type=str, required=True)
     parser.add_argument("--output_dir", type=str, default="./test_data/bio")
-    parser.add_argument("--limit", type=int, default=3)
-    parser.add_argument("--output_format", type=str, default="all", choices=["separate", "all"], help="Output format: 'separate' files or 'all' in one file")
+    parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--generate", type=str, default="all", help="Options: all OR mcq,direct_qa,inverse_qa,multihop,interaction,tool")
+    parser.add_argument("--output_format", type=str, default="separate", choices=["separate", "all"])
     args = parser.parse_args()
     main(args)
