@@ -7,6 +7,11 @@ from datetime import datetime
 
 ALL_REWRITE_TYPES = "1_forward,1_inverse,1_attribute,2_premise,2_negative,2_consequence,3_spatial,3_concept,3_comparison,4_correction,4_discrimination,4_task"
 
+ONE_STEP_TYPES = "1_forward,1_inverse,1_attribute,3_concept,4_task"
+
+# Level 2: 引入了外部锚点、场景、对比实体或逻辑中介
+TWO_STEPS_TYPES = "2_premise,2_negative,2_consequence,3_spatial,3_comparison,4_correction,4_discrimination"
+
 
 def generate_dataset_key(categories, rewrite_types, ratios):
     """
@@ -31,11 +36,29 @@ def synthesize_data(args):
     """
     categories = args.categories.split(",")
     
-    # 处理 rewrite_types: 如果是 'all'，使用所有类型
+    # 处理 rewrite_types: 如果是 'all', 'onestep', 'twostep'，使用对应的类型集合
     if args.rewrite_types.lower() == 'all':
         types = ALL_REWRITE_TYPES.split(",")
         print(f"[*] Using ALL rewrite types ({len(types)} types)")
         # 如果是 'all'，ratios 应该是单个值（所有类型使用相同比例）或与类型数量相同
+        ratios = [float(r) for r in args.ratios.split(":")]
+        if len(ratios) == 1:
+            # 如果只有一个比例值，所有类型都使用这个比例
+            ratios = ratios * len(types)
+            print(f"[*] Using uniform ratio {ratios[0]} for all types")
+    elif args.rewrite_types.lower() == 'onestep':
+        types = ONE_STEP_TYPES.split(",")
+        print(f"[*] Using ONE_STEP rewrite types ({len(types)} types)")
+        # 如果是 'onestep'，ratios 应该是单个值（所有类型使用相同比例）或与类型数量相同
+        ratios = [float(r) for r in args.ratios.split(":")]
+        if len(ratios) == 1:
+            # 如果只有一个比例值，所有类型都使用这个比例
+            ratios = ratios * len(types)
+            print(f"[*] Using uniform ratio {ratios[0]} for all types")
+    elif args.rewrite_types.lower() == 'twostep':
+        types = TWO_STEPS_TYPES.split(",")
+        print(f"[*] Using TWO_STEPS rewrite types ({len(types)} types)")
+        # 如果是 'twostep'，ratios 应该是单个值（所有类型使用相同比例）或与类型数量相同
         ratios = [float(r) for r in args.ratios.split(":")]
         if len(ratios) == 1:
             # 如果只有一个比例值，所有类型都使用这个比例
@@ -141,7 +164,7 @@ if __name__ == "__main__":
     
     # 数据合成参数
     parser.add_argument("--categories", type=str, required=True, help="e.g., geo,history")
-    parser.add_argument("--rewrite_types", type=str, required=True, help="e.g., 1_forward,1_inverse or 'all' to use all rewrite types")
+    parser.add_argument("--rewrite_types", type=str, required=True, help="e.g., 1_forward,1_inverse or 'all'/'onestep'/'twostep' to use predefined rewrite type sets")
     parser.add_argument("--ratios", type=str, required=True, help="e.g., 1:1 (or single value like '1' when using 'all')")
     
     args = parser.parse_args()

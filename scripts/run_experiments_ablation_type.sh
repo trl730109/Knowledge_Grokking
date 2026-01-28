@@ -8,22 +8,26 @@ DEFAULT_TRAIN_EPOCHS="1.0"
 DEFAULT_LEARNING_RATE="1e-4"
 DEFAULT_LORA_RANK="64"
 
-experiments=(
-  "bio:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "brand:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "creative:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "game:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "history:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "mat:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
 
-  # "bio:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "brand:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "creative:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "game:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "history:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "mat:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
+experiments=(
+# 10.0 训练
+"bio:onestep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"brand:onestep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"creative:onestep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"game:onestep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"geo:onestep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"history:onestep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"mat:onestep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+
+
+"bio:twostep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"brand:twostep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"creative:twostep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"game:twostep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"geo:twostep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"history:twostep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+"mat:twostep:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+
 )
 
 script_date=$(date +%Y%m%d_%H%M%S)
@@ -49,15 +53,15 @@ run_experiment() {
   # 生成包含超参数的实验标识符（用于目录命名）
   # 格式化学习率：1e-4 -> 1em4, 2e-4 -> 2em4 (m表示minus，避免歧义)
   local lr_formatted=$(echo "${learning_rate}" | sed 's/e-/em/g')
-  local exp_id="${categories}_wo_align_${exp_date}_ep${train_epochs}_lr${lr_formatted}_r${lora_rank}"
+  local exp_id="${rewrite_types}_${exp_date}_ep${train_epochs}_lr${lr_formatted}_r${lora_rank}"
   
   echo "========================================"
   echo "[RUN] Experiment Configuration:"
   echo "  Experiment ID: ${exp_id}"
   echo "  Date:          ${exp_date}"
   echo "  Categories:    ${categories}"
-  echo "  Rewrite Types: ${rewrite_types} (not used for baseline SFT)"
-  echo "  Ratios:        ${ratios} (not used for baseline SFT)"
+  echo "  Rewrite Types: ${rewrite_types}"
+  echo "  Ratios:        ${ratios}"
   echo "  Model:         ${dnn}"
   echo "  CUDA Devices:  ${cuda_devices}"
   echo "  Train Epochs:  ${train_epochs}"
@@ -81,18 +85,40 @@ run_experiment() {
   local SCRIPT_DIR
   SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
   
-  # 直接使用已有的 baseline SFT 数据集
-  # dataset_info.json 中的 key 格式为: {categories}_sft_baseline
-  local dataset_key="${categories}_sft_baseline_wo_align"
+  # Step 1: 数据合成
+  echo ""
+  echo "[STEP 1/3] Synthesizing dataset..."
+  local syn_output
+  syn_output=$(python "${SCRIPT_DIR}/syn_and_train.py" \
+    --categories "${categories}" \
+    --rewrite_types "${rewrite_types}" \
+    --ratios "${ratios}" 2>&1)
   
-  echo "[INFO] Using existing baseline SFT dataset: ${dataset_key}"
+  if [ $? -ne 0 ]; then
+    echo "[ERROR] ✗ Data synthesis failed"
+    echo "${syn_output}"
+    return 1
+  fi
+  
+  echo "${syn_output}"
+  
+  # 从输出中提取 dataset_key
+  local dataset_key
+  dataset_key=$(echo "${syn_output}" | grep "^DATASET_KEY=" | cut -d'=' -f2)
+  
+  if [ -z "${dataset_key}" ]; then
+    echo "[ERROR] Failed to extract dataset key from synthesis output"
+    return 1
+  fi
+  
+  echo "[INFO] ✓ Data synthesis completed"
   echo "[INFO] Dataset Key: ${dataset_key}"
   
-  # Step 1: 训练
+  # Step 2: 训练
   echo ""
-  echo "[STEP 1/2] Training model..."
+  echo "[STEP 2/3] Training model..."
   echo "[INFO] Training for ${train_epochs} epochs with LR=${learning_rate}, Rank=${lora_rank}"
-  local output_dir="${SCRIPT_DIR}/trained_models/${dnn}/${exp_id}"
+  local output_dir="${SCRIPT_DIR}/trained_models/${dnn}/ablation_type/${exp_id}"
   
   if bash "${SCRIPT_DIR}/scripts/train.sh" \
     "${dataset_key}" \
@@ -115,6 +141,8 @@ run_experiment() {
   "experiment_id": "${exp_id}",
   "date": "${exp_date}",
   "categories": "${categories}",
+  "rewrite_types": "${rewrite_types}",
+  "ratios": "${ratios}",
   "dataset_key": "${dataset_key}",
   "model_name": "${dnn}",
   "model_path": "${model_dir}",
@@ -123,8 +151,7 @@ run_experiment() {
   "learning_rate": "${learning_rate}",
   "lora_rank": ${lora_rank},
   "lora_alpha": ${lora_alpha},
-  "output_dir": "${output_dir}",
-  "note": "Baseline SFT training using pre-existing dataset"
+  "output_dir": "${output_dir}"
 }
 EOF
   echo "[INFO] Training config saved to ${output_dir}/training_config.json"
@@ -132,9 +159,9 @@ EOF
   # 训练完成后的 LoRA 路径
   local lora_path="${output_dir}"
   
-  # Step 2: 评估
+  # Step 3: 评估
   echo ""
-  echo "[STEP 2/2] Evaluating model..."
+  echo "[STEP 3/3] Evaluating model..."
   echo "[INFO] Evaluating on trained categories: ${categories}"
   
   # 评估只使用前2张卡（避免OOM）
@@ -145,7 +172,7 @@ EOF
   echo "[INFO] Using GPUs ${eval_cuda_devices} for evaluation (TP=${tensor_parallel_size})"
   
   # 设置输出目录前缀
-  local output_dir_prefix="${SCRIPT_DIR}/output/baseline_sft/wo_align/${dnn}/${exp_id}"
+  local output_dir_prefix="${SCRIPT_DIR}/output/ablation_type/${dnn}/${script_date}/${exp_id}"
   
   if bash "${SCRIPT_DIR}/scripts/eval.sh" \
     "${dnn}" \
@@ -183,73 +210,24 @@ EOF
 EOF
   echo "[INFO] Evaluation config saved to ${eval_output_dir}/eval_config.json"
   
-  # 汇总评估结果到顶层目录
-  echo "[INFO] Collecting evaluation results..."
-  local summary_file="${eval_output_dir}/results_summary.txt"
-  {
-    echo "========================================"
-    echo "Evaluation Results Summary"
-    echo "========================================"
-    echo "Experiment ID: ${exp_id}"
-    echo "Date: ${exp_date}"
-    echo "Categories: ${categories}"
-    echo "Model: ${dnn}"
-    echo "LoRA Path: ${lora_path}"
-    echo "Train Epochs: ${train_epochs}"
-    echo "Learning Rate: ${learning_rate}"
-    echo "LoRA Rank: ${lora_rank}"
-    echo "LoRA Alpha: ${lora_alpha}"
-    echo "========================================"
-    echo ""
-  } > "${summary_file}"
-  
-  # 收集每个 domain 的 results.txt
-  # eval_grokking_vLLM.py 会在 {output_dir}/{date_str}/{domain}/results.txt 生成结果
-  # date_str 传入的是 exp_id，格式为 {exp_date}_ep{epochs}_lr{lr}_r{rank} (例如: 0125_0824_ep10.0_lr1em4_r128)
-  local date_str="${exp_id}"  # 使用 exp_id，因为 eval.sh 传递的是 exp_id 作为 date_str
-  local results_found=0
-  if [ -d "${eval_output_dir}/${date_str}" ]; then
-    for domain_dir in "${eval_output_dir}/${date_str}"/*/; do
-      if [ -d "${domain_dir}" ]; then
-        local domain=$(basename "${domain_dir}")
-        local domain_results="${domain_dir}/results.txt"
-        if [ -f "${domain_results}" ]; then
-          echo "----------------------------------------" >> "${summary_file}"
-          echo "Domain: ${domain}" >> "${summary_file}"
-          echo "----------------------------------------" >> "${summary_file}"
-          cat "${domain_results}" >> "${summary_file}"
-          echo "" >> "${summary_file}"
-          results_found=1
-        fi
-      fi
-    done
-  fi
-  
-  if [ ${results_found} -eq 1 ]; then
-    echo "[INFO] Results summary saved to ${summary_file}"
-  else
-    echo "[WARNING] No results.txt files found in ${eval_output_dir}/${date_str}/"
-  fi
-  
-  # 评估完成后删除 LoRA 模型以节省内存
-  # 只保留 geo 类别的 LoRA，其他类别删除
-  if [ "${categories}" == "geo" ]; then
-    echo "[INFO] Keeping LoRA model for geo category: ${lora_path}"
-  else
-    echo "[INFO] Cleaning up LoRA model to save disk space..."
+  # 评估完成后，只有 geo 保留 LoRA，其他都删除以节省空间
+  if [ "${categories}" != "geo" ]; then
+    echo "[INFO] Cleaning up LoRA model to save disk space (keeping only geo)..."
     if [ -d "${lora_path}" ]; then
       rm -rf "${lora_path}"
       echo "[INFO] ✓ LoRA model deleted: ${lora_path}"
     else
       echo "[WARNING] LoRA path not found: ${lora_path}"
     fi
+  else
+    echo "[INFO] Keeping LoRA model for geo category: ${lora_path}"
   fi
   
   echo ""
   echo "[DONE] Experiment completed: ${dataset_key}"
   echo "  Experiment ID: ${exp_id}"
   echo "  Training output: ./trained_models/${dnn}/${exp_id}"
-  echo "  Evaluation output: ./output/baseline_sft/wo_align/${dnn}/${exp_id}"
+  echo "  Evaluation output: ./output/lora/${dnn}/${exp_id}"
   echo "========================================"
   echo ""
 }
@@ -316,5 +294,8 @@ for exp_idx in "${!experiments[@]}"; do
   sleep 5
 done
 
+echo "=================================================================="
 echo "All experiments completed!"
 echo "Total experiments run: ${total_experiments}"
+echo "Script Date: ${script_date}"
+echo "==================================================================

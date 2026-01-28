@@ -2,20 +2,21 @@
 set -euo pipefail
 
 # 默认配置
-DEFAULT_DNN="llama-3.1-8b-instruct"
+DEFAULT_DNN="qwen3-8b"
 DEFAULT_CUDA_DEVICES="0,1,2,3"
 DEFAULT_TRAIN_EPOCHS="1.0"
 DEFAULT_LEARNING_RATE="1e-4"
 DEFAULT_LORA_RANK="64"
 
 experiments=(
-  "bio:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "brand:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "creative:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "game:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+  # "bio:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+  # "brand:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+  # "creative:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+  # "game:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
   "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "history:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "mat:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+  "geo:all:1:llama-3.1-8b-instruct:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+  # "history:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+  # "mat:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
 
   # "bio:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
   # "brand:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
@@ -49,8 +50,8 @@ run_experiment() {
   # 生成包含超参数的实验标识符（用于目录命名）
   # 格式化学习率：1e-4 -> 1em4, 2e-4 -> 2em4 (m表示minus，避免歧义)
   local lr_formatted=$(echo "${learning_rate}" | sed 's/e-/em/g')
+  # local exp_id="${categories}_${exp_date}_ep${train_epochs}_lr${lr_formatted}_r${lora_rank}"
   local exp_id="${categories}_wo_align_${exp_date}_ep${train_epochs}_lr${lr_formatted}_r${lora_rank}"
-  
   echo "========================================"
   echo "[RUN] Experiment Configuration:"
   echo "  Experiment ID: ${exp_id}"
@@ -90,9 +91,9 @@ run_experiment() {
   
   # Step 1: 训练
   echo ""
-  echo "[STEP 1/2] Training model..."
+  echo "[TRAINING] Training model (train-only mode, no evaluation)..."
   echo "[INFO] Training for ${train_epochs} epochs with LR=${learning_rate}, Rank=${lora_rank}"
-  local output_dir="${SCRIPT_DIR}/trained_models/${dnn}/${exp_id}"
+  local output_dir="${SCRIPT_DIR}/lora_saved/${dnn}/wo_align/${exp_id}"
   
   if bash "${SCRIPT_DIR}/scripts/train.sh" \
     "${dataset_key}" \
@@ -132,124 +133,15 @@ EOF
   # 训练完成后的 LoRA 路径
   local lora_path="${output_dir}"
   
-  # Step 2: 评估
-  echo ""
-  echo "[STEP 2/2] Evaluating model..."
-  echo "[INFO] Evaluating on trained categories: ${categories}"
-  
-  # 评估只使用前2张卡（避免OOM）
-  local eval_cuda_devices
-  eval_cuda_devices=$(echo "${cuda_devices}" | cut -d',' -f1,2)
-  local tensor_parallel_size=2
-  
-  echo "[INFO] Using GPUs ${eval_cuda_devices} for evaluation (TP=${tensor_parallel_size})"
-  
-  # 设置输出目录前缀
-  local output_dir_prefix="${SCRIPT_DIR}/output/baseline_sft/wo_align/${dnn}/${exp_id}"
-  
-  if bash "${SCRIPT_DIR}/scripts/eval.sh" \
-    "${dnn}" \
-    "${model_dir}" \
-    "${eval_cuda_devices}" \
-    "${lora_path}" \
-    "${categories}" \
-    "${tensor_parallel_size}" \
-    "${exp_id}" \
-    "${output_dir_prefix}"; then
-    echo "[INFO] ✓ Evaluation completed successfully"
-  else
-    echo "[WARNING] ✗ Evaluation failed, but continuing..."
-  fi
-  
-  # 保存评估配置到 JSON 文件
-  local eval_output_dir="${output_dir_prefix}"
-  mkdir -p "${eval_output_dir}"
-  cat > "${eval_output_dir}/eval_config.json" <<EOF
-{
-  "experiment_id": "${exp_id}",
-  "date": "${exp_date}",
-  "categories": "${categories}",
-  "model_name": "${dnn}",
-  "model_path": "${model_dir}",
-  "lora_path": "${lora_path}",
-  "test_datasets": "${categories}",
-  "eval_cuda_devices": "${eval_cuda_devices}",
-  "tensor_parallel_size": ${tensor_parallel_size},
-  "train_epochs": ${train_epochs},
-  "learning_rate": "${learning_rate}",
-  "lora_rank": ${lora_rank},
-  "lora_alpha": ${lora_alpha}
-}
-EOF
-  echo "[INFO] Evaluation config saved to ${eval_output_dir}/eval_config.json"
-  
-  # 汇总评估结果到顶层目录
-  echo "[INFO] Collecting evaluation results..."
-  local summary_file="${eval_output_dir}/results_summary.txt"
-  {
-    echo "========================================"
-    echo "Evaluation Results Summary"
-    echo "========================================"
-    echo "Experiment ID: ${exp_id}"
-    echo "Date: ${exp_date}"
-    echo "Categories: ${categories}"
-    echo "Model: ${dnn}"
-    echo "LoRA Path: ${lora_path}"
-    echo "Train Epochs: ${train_epochs}"
-    echo "Learning Rate: ${learning_rate}"
-    echo "LoRA Rank: ${lora_rank}"
-    echo "LoRA Alpha: ${lora_alpha}"
-    echo "========================================"
-    echo ""
-  } > "${summary_file}"
-  
-  # 收集每个 domain 的 results.txt
-  # eval_grokking_vLLM.py 会在 {output_dir}/{date_str}/{domain}/results.txt 生成结果
-  # date_str 传入的是 exp_id，格式为 {exp_date}_ep{epochs}_lr{lr}_r{rank} (例如: 0125_0824_ep10.0_lr1em4_r128)
-  local date_str="${exp_id}"  # 使用 exp_id，因为 eval.sh 传递的是 exp_id 作为 date_str
-  local results_found=0
-  if [ -d "${eval_output_dir}/${date_str}" ]; then
-    for domain_dir in "${eval_output_dir}/${date_str}"/*/; do
-      if [ -d "${domain_dir}" ]; then
-        local domain=$(basename "${domain_dir}")
-        local domain_results="${domain_dir}/results.txt"
-        if [ -f "${domain_results}" ]; then
-          echo "----------------------------------------" >> "${summary_file}"
-          echo "Domain: ${domain}" >> "${summary_file}"
-          echo "----------------------------------------" >> "${summary_file}"
-          cat "${domain_results}" >> "${summary_file}"
-          echo "" >> "${summary_file}"
-          results_found=1
-        fi
-      fi
-    done
-  fi
-  
-  if [ ${results_found} -eq 1 ]; then
-    echo "[INFO] Results summary saved to ${summary_file}"
-  else
-    echo "[WARNING] No results.txt files found in ${eval_output_dir}/${date_str}/"
-  fi
-  
-  # 评估完成后删除 LoRA 模型以节省内存
-  # 只保留 geo 类别的 LoRA，其他类别删除
-  if [ "${categories}" == "geo" ]; then
-    echo "[INFO] Keeping LoRA model for geo category: ${lora_path}"
-  else
-    echo "[INFO] Cleaning up LoRA model to save disk space..."
-    if [ -d "${lora_path}" ]; then
-      rm -rf "${lora_path}"
-      echo "[INFO] ✓ LoRA model deleted: ${lora_path}"
-    else
-      echo "[WARNING] LoRA path not found: ${lora_path}"
-    fi
-  fi
+  # 注意：此脚本只进行训练，不进行评估
+  # 评估需要在不同的环境中单独运行
   
   echo ""
-  echo "[DONE] Experiment completed: ${dataset_key}"
+  echo "[DONE] Training completed: ${dataset_key}"
   echo "  Experiment ID: ${exp_id}"
   echo "  Training output: ./trained_models/${dnn}/${exp_id}"
-  echo "  Evaluation output: ./output/baseline_sft/wo_align/${dnn}/${exp_id}"
+  echo "  LoRA path: ${lora_path}"
+  echo "  Note: Evaluation will be done separately in a different environment"
   echo "========================================"
   echo ""
 }

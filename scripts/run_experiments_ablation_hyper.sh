@@ -2,28 +2,30 @@
 set -euo pipefail
 
 # 默认配置
-DEFAULT_DNN="llama-3.1-8b-instruct"
+DEFAULT_DNN="qwen3-8b"
 DEFAULT_CUDA_DEVICES="0,1,2,3"
 DEFAULT_TRAIN_EPOCHS="1.0"
 DEFAULT_LEARNING_RATE="1e-4"
 DEFAULT_LORA_RANK="64"
 
-experiments=(
-  "bio:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "brand:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "creative:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "game:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "history:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
-  "mat:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
 
-  # "bio:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "brand:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "creative:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "game:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "history:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
-  # "mat:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:1.0:2e-4:64"
+experiments=(
+  # === Baseline / Anchor ===
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:64"
+
+  # === Epochs Ablation (5, 10, 20) ===
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:5.0:2e-4:64"
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:20.0:2e-4:64"
+
+  # === Learning Rate Ablation (1e-4, 2e-4, 5e-4) ===
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:1e-4:64"
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:5e-4:64"
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:5e-5:64"
+
+  # === LoRA Rank Ablation (32, 64, 128) ===
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:16"
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:32"
+  "geo:all:1:${DEFAULT_DNN}:${DEFAULT_CUDA_DEVICES}:10.0:2e-4:128"
 )
 
 script_date=$(date +%Y%m%d_%H%M%S)
@@ -49,15 +51,15 @@ run_experiment() {
   # 生成包含超参数的实验标识符（用于目录命名）
   # 格式化学习率：1e-4 -> 1em4, 2e-4 -> 2em4 (m表示minus，避免歧义)
   local lr_formatted=$(echo "${learning_rate}" | sed 's/e-/em/g')
-  local exp_id="${categories}_wo_align_${exp_date}_ep${train_epochs}_lr${lr_formatted}_r${lora_rank}"
+  local exp_id="${exp_date}_ep${train_epochs}_lr${lr_formatted}_r${lora_rank}"
   
   echo "========================================"
   echo "[RUN] Experiment Configuration:"
   echo "  Experiment ID: ${exp_id}"
   echo "  Date:          ${exp_date}"
   echo "  Categories:    ${categories}"
-  echo "  Rewrite Types: ${rewrite_types} (not used for baseline SFT)"
-  echo "  Ratios:        ${ratios} (not used for baseline SFT)"
+  echo "  Rewrite Types: ${rewrite_types}"
+  echo "  Ratios:        ${ratios}"
   echo "  Model:         ${dnn}"
   echo "  CUDA Devices:  ${cuda_devices}"
   echo "  Train Epochs:  ${train_epochs}"
@@ -80,34 +82,85 @@ run_experiment() {
   # 获取项目根目录
   local SCRIPT_DIR
   SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+
+  # ------------------------------------------------------------------
+  # 【环境切换关键点】
+  # 使用 ( ) 启动子 Shell 隔离 limo 环境：包含数据合成与训练
+  # ------------------------------------------------------------------
+  local dataset_key=""
+  local output_dir="${SCRIPT_DIR}/trained_models/${dnn}/hyper/${exp_id}"
   
-  # 直接使用已有的 baseline SFT 数据集
-  # dataset_info.json 中的 key 格式为: {categories}_sft_baseline
-  local dataset_key="${categories}_sft_baseline_wo_align"
+  # 使用唯一的临时文件名（基于 exp_id）避免多个脚本同时运行时的冲突
+  local tmp_key_file="${SCRIPT_DIR}/.tmp_dataset_key_${exp_id}"
+
+  # 开启子 Shell
+  (
+    echo "[ENV] Entering sub-shell to activate limo environment..."
+    
+    # 子 shell 中重新定义临时文件路径（local 变量不会被子 shell 继承）
+    local tmp_key_file="${SCRIPT_DIR}/.tmp_dataset_key_${exp_id}"
+    
+    # 进入 pretrain 目录并加载指定环境
+    cd "/workspace/pretrain"
+    source .bashrc
+    
+    # 显式初始化 conda（根据通用路径，如不匹配请检查 conda 位置）
+    CONDA_BASE=$(conda info --base)
+    source "${CONDA_BASE}/etc/profile.d/conda.sh"
+    conda activate limo
+    
+    echo "[INFO] Current Env: ${CONDA_DEFAULT_ENV:-None}"
+
+    # --- Step 1: 数据合成 ---
+    echo ""
+    echo "[STEP 1/3] Synthesizing dataset (in limo env)..."
+    local syn_output
+    syn_output=$(python "${SCRIPT_DIR}/syn_and_train.py" \
+      --categories "${categories}" \
+      --rewrite_types "${rewrite_types}" \
+      --ratios "${ratios}" 2>&1)
+    
+    echo "${syn_output}"
+    
+    # 将 dataset_key 写入临时文件以便传回父 Shell
+    echo "${syn_output}" | grep "^DATASET_KEY=" | cut -d'=' -f2 > "${tmp_key_file}"
+    
+    # --- Step 2: 训练 ---
+    echo ""
+    echo "[STEP 2/3] Training model (in limo env)..."
+    echo "[INFO] Training for ${train_epochs} epochs with LR=${learning_rate}, Rank=${lora_rank}"
+    local ds_key_internal=$(cat "${tmp_key_file}")
+    
+    if bash "${SCRIPT_DIR}/scripts/train.sh" \
+      "${ds_key_internal}" \
+      "${dnn}" \
+      "${model_dir}" \
+      "${cuda_devices}" \
+      "${train_epochs}" \
+      "${output_dir}" \
+      "${learning_rate}" \
+      "${lora_rank}"; then
+      echo "[INFO] ✓ Training completed"
+    else
+      echo "[ERROR] ✗ Training failed"
+      exit 1
+    fi
+  ) 
   
-  echo "[INFO] Using existing baseline SFT dataset: ${dataset_key}"
-  echo "[INFO] Dataset Key: ${dataset_key}"
-  
-  # Step 1: 训练
-  echo ""
-  echo "[STEP 1/2] Training model..."
-  echo "[INFO] Training for ${train_epochs} epochs with LR=${learning_rate}, Rank=${lora_rank}"
-  local output_dir="${SCRIPT_DIR}/trained_models/${dnn}/${exp_id}"
-  
-  if bash "${SCRIPT_DIR}/scripts/train.sh" \
-    "${dataset_key}" \
-    "${dnn}" \
-    "${model_dir}" \
-    "${cuda_devices}" \
-    "${train_epochs}" \
-    "${output_dir}" \
-    "${learning_rate}" \
-    "${lora_rank}"; then
-    echo "[INFO] ✓ Training completed successfully"
+  # 子 Shell 结束，环境自动切回裸机，目录也切回原始目录
+  # ------------------------------------------------------------------
+
+  # 从临时文件读取子 Shell 产生的 key 并清理
+  if [ -f "${tmp_key_file}" ]; then
+    dataset_key=$(cat "${tmp_key_file}")
+    rm "${tmp_key_file}"
   else
-    echo "[ERROR] ✗ Training failed"
+    echo "[ERROR] Dataset key missing after training"
     return 1
   fi
+  
+  echo "[INFO] ✓ Data synthesis and training completed"
+  echo "[INFO] Dataset Key: ${dataset_key}"
   
   # 保存训练配置到 JSON 文件
   cat > "${output_dir}/training_config.json" <<EOF
@@ -115,6 +168,8 @@ run_experiment() {
   "experiment_id": "${exp_id}",
   "date": "${exp_date}",
   "categories": "${categories}",
+  "rewrite_types": "${rewrite_types}",
+  "ratios": "${ratios}",
   "dataset_key": "${dataset_key}",
   "model_name": "${dnn}",
   "model_path": "${model_dir}",
@@ -123,8 +178,7 @@ run_experiment() {
   "learning_rate": "${learning_rate}",
   "lora_rank": ${lora_rank},
   "lora_alpha": ${lora_alpha},
-  "output_dir": "${output_dir}",
-  "note": "Baseline SFT training using pre-existing dataset"
+  "output_dir": "${output_dir}"
 }
 EOF
   echo "[INFO] Training config saved to ${output_dir}/training_config.json"
@@ -132,9 +186,9 @@ EOF
   # 训练完成后的 LoRA 路径
   local lora_path="${output_dir}"
   
-  # Step 2: 评估
+  # Step 3: 评估 (裸机环境)
   echo ""
-  echo "[STEP 2/2] Evaluating model..."
+  echo "[STEP 3/3] Evaluating model in BARE METAL environment..."
   echo "[INFO] Evaluating on trained categories: ${categories}"
   
   # 评估只使用前2张卡（避免OOM）
@@ -145,7 +199,7 @@ EOF
   echo "[INFO] Using GPUs ${eval_cuda_devices} for evaluation (TP=${tensor_parallel_size})"
   
   # 设置输出目录前缀
-  local output_dir_prefix="${SCRIPT_DIR}/output/baseline_sft/wo_align/${dnn}/${exp_id}"
+  local output_dir_prefix="${SCRIPT_DIR}/output/ablation_hyper/${script_date}/${dnn}/${exp_id}"
   
   if bash "${SCRIPT_DIR}/scripts/eval.sh" \
     "${dnn}" \
@@ -183,73 +237,24 @@ EOF
 EOF
   echo "[INFO] Evaluation config saved to ${eval_output_dir}/eval_config.json"
   
-  # 汇总评估结果到顶层目录
-  echo "[INFO] Collecting evaluation results..."
-  local summary_file="${eval_output_dir}/results_summary.txt"
-  {
-    echo "========================================"
-    echo "Evaluation Results Summary"
-    echo "========================================"
-    echo "Experiment ID: ${exp_id}"
-    echo "Date: ${exp_date}"
-    echo "Categories: ${categories}"
-    echo "Model: ${dnn}"
-    echo "LoRA Path: ${lora_path}"
-    echo "Train Epochs: ${train_epochs}"
-    echo "Learning Rate: ${learning_rate}"
-    echo "LoRA Rank: ${lora_rank}"
-    echo "LoRA Alpha: ${lora_alpha}"
-    echo "========================================"
-    echo ""
-  } > "${summary_file}"
-  
-  # 收集每个 domain 的 results.txt
-  # eval_grokking_vLLM.py 会在 {output_dir}/{date_str}/{domain}/results.txt 生成结果
-  # date_str 传入的是 exp_id，格式为 {exp_date}_ep{epochs}_lr{lr}_r{rank} (例如: 0125_0824_ep10.0_lr1em4_r128)
-  local date_str="${exp_id}"  # 使用 exp_id，因为 eval.sh 传递的是 exp_id 作为 date_str
-  local results_found=0
-  if [ -d "${eval_output_dir}/${date_str}" ]; then
-    for domain_dir in "${eval_output_dir}/${date_str}"/*/; do
-      if [ -d "${domain_dir}" ]; then
-        local domain=$(basename "${domain_dir}")
-        local domain_results="${domain_dir}/results.txt"
-        if [ -f "${domain_results}" ]; then
-          echo "----------------------------------------" >> "${summary_file}"
-          echo "Domain: ${domain}" >> "${summary_file}"
-          echo "----------------------------------------" >> "${summary_file}"
-          cat "${domain_results}" >> "${summary_file}"
-          echo "" >> "${summary_file}"
-          results_found=1
-        fi
-      fi
-    done
-  fi
-  
-  if [ ${results_found} -eq 1 ]; then
-    echo "[INFO] Results summary saved to ${summary_file}"
-  else
-    echo "[WARNING] No results.txt files found in ${eval_output_dir}/${date_str}/"
-  fi
-  
-  # 评估完成后删除 LoRA 模型以节省内存
-  # 只保留 geo 类别的 LoRA，其他类别删除
-  if [ "${categories}" == "geo" ]; then
-    echo "[INFO] Keeping LoRA model for geo category: ${lora_path}"
-  else
-    echo "[INFO] Cleaning up LoRA model to save disk space..."
+  # 评估完成后，只有 geo 保留 LoRA，其他都删除以节省空间
+  if [ "${categories}" != "geo" ]; then
+    echo "[INFO] Cleaning up LoRA model to save disk space (keeping only geo)..."
     if [ -d "${lora_path}" ]; then
       rm -rf "${lora_path}"
       echo "[INFO] ✓ LoRA model deleted: ${lora_path}"
     else
       echo "[WARNING] LoRA path not found: ${lora_path}"
     fi
+  else
+    echo "[INFO] Keeping LoRA model for geo category: ${lora_path}"
   fi
   
   echo ""
   echo "[DONE] Experiment completed: ${dataset_key}"
   echo "  Experiment ID: ${exp_id}"
   echo "  Training output: ./trained_models/${dnn}/${exp_id}"
-  echo "  Evaluation output: ./output/baseline_sft/wo_align/${dnn}/${exp_id}"
+  echo "  Evaluation output: ./output/ablation_hyper/${script_date}/${dnn}/${exp_id}"
   echo "========================================"
   echo ""
 }
@@ -257,7 +262,7 @@ EOF
 # 主程序
 total_experiments=${#experiments[@]}
 echo "=================================================================="
-echo "Knowledge Grokking Experiment Runner"
+echo "Knowledge Grokking Experiment Runner | Mode: Sub-shell Environment"
 echo "Script Date: ${script_date}"
 echo "Total experiments: ${total_experiments}"
 echo "=================================================================="
@@ -316,5 +321,8 @@ for exp_idx in "${!experiments[@]}"; do
   sleep 5
 done
 
+echo "=================================================================="
 echo "All experiments completed!"
 echo "Total experiments run: ${total_experiments}"
+echo "Script Date: ${script_date}"
+echo "==================================================================

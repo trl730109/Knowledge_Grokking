@@ -116,14 +116,15 @@ CUDA_VISIBLE_DEVICES="${cuda_devices}" llamafactory-cli train \
     --max_grad_norm 1.0 \
     --logging_steps 5 \
     --save_only_model true \
-    --save_strategy epoch \
+    --save_strategy steps \
+    --save_steps 100000 \
     --save_total_limit 1 \
     --warmup_steps "${warmup_steps}" \
     --optim adamw_torch \
     --packing False \
     --report_to none \
     --output_dir "${output_dir}" \
-    --bf16 True \
+    --fp16 True \
     --plot_loss True \
     --ddp_timeout 180000000 \
     --include_num_input_tokens_seen True \

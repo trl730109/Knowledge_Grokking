@@ -1,6 +1,80 @@
 Overall Evaluation Summary
 Model: qwen3-8b
+LoRA: None
 Date: 0125_1529
 Test Datasets: all
 ========================================
 
+[BIO]
+----------------------------------------
+direct_qa      : 0.0222
+inverse_qa     : 0.0611
+mcq            : 0.0611
+multihop       : 0.0611
+scenario       : 0.0056
+tool           : 0.0000
+Average: 0.0352
+
+[BRAND]
+----------------------------------------
+direct_qa      : 0.0056
+inverse_qa     : 0.0000
+mcq            : 0.0056
+multihop       : 0.0167
+scenario       : 0.0056
+tool           : 0.0556
+Average: 0.0148
+
+[CREATIVE]
+----------------------------------------
+direct_qa      : 0.0222
+inverse_qa     : 0.0333
+mcq            : 0.0667
+multihop       : 0.0333
+scenario       : 0.0222
+tool           : 0.1889
+Average: 0.0611
+
+[GAME]
+----------------------------------------
+direct_qa      : 0.0111
+inverse_qa     : 0.0222
+mcq            : 0.0000
+multihop       : 0.0722
+scenario       : 0.0167
+tool           : 0.0167
+Average: 0.0231
+
+[GEO]
+----------------------------------------
+direct_qa      : 0.0778
+inverse_qa     : 0.0167
+mcq            : 0.0222
+multihop       : 0.0503
+scenario       : 0.2000
+tool           : 0.0667
+Average: 0.0723
+
+[HISTORY]
+----------------------------------------
+direct_qa      : 0.0056
+inverse_qa     : 0.0278
+mcq            : 0.0167
+multihop       : 0.0333
+scenario       : 0.0167
+tool           : 0.0333
+Average: 0.0222
+
+[MAT]
+----------------------------------------
+direct_qa      : 0.0333
+inverse_qa     : 0.0056
+mcq            : 0.0167
+multihop       : 0.0944
+scenario       : 0.0167
+tool           : 0.0056
+Average: 0.0287
+
+========================================
+Overall Average (across 7 domains): 0.0368
+========================================

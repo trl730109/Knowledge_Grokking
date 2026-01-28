@@ -6,16 +6,24 @@ dnn=qwen3-8b
 source "${SCRIPT_DIR}/env.sh"
 
 lora_configs=(
-"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/bio_wo_align_0127_0627_ep10.0_lr2em4_r64:bio"
-"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/brand_wo_align_0127_0629_ep10.0_lr2em4_r64:brand"
-"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/creative_wo_align_0127_0630_ep10.0_lr2em4_r64:creative"
-"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/game_wo_align_0127_0631_ep10.0_lr2em4_r64:game"
-"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/geo_wo_align_0127_0633_ep10.0_lr2em4_r64:geo"
-"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/history_wo_align_0127_0634_ep10.0_lr2em4_r64:history"
-"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/mat_wo_align_0127_0635_ep10.0_lr2em4_r64:mat"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/onestep_0126_1641_ep10.0_lr2em4_r64:bio:onestep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/onestep_0126_1704_ep10.0_lr2em4_r64:brand:onestep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/onestep_0126_1724_ep10.0_lr2em4_r64:creative:onestep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/onestep_0126_1739_ep10.0_lr2em4_r64:game:onestep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/onestep_0126_1800_ep10.0_lr2em4_r64:geo:onestep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/onestep_0126_1823_ep10.0_lr2em4_r64:history:onestep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/onestep_0126_1842_ep10.0_lr2em4_r64:mat:onestep"
+
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/twostep_0126_1904_ep10.0_lr2em4_r64:bio:twostep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/twostep_0126_1942_ep10.0_lr2em4_r64:brand:twostep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/twostep_0126_2010_ep10.0_lr2em4_r64:creative:twostep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/twostep_0126_2040_ep10.0_lr2em4_r64:game:twostep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/twostep_0126_2118_ep10.0_lr2em4_r64:geo:twostep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/twostep_0126_2157_ep10.0_lr2em4_r64:history:twostep"
+"/workspace/tzc/Knowledge_Grokking/trained_models/qwen3-8b/ablation_type/twostep_0126_2233_ep10.0_lr2em4_r64:mat:twostep"
 )
 
-types=baseline_sft
+types=ablation_type
 date_str=$(date +%m%d_%H%M)
 cuda_devices=0,1
 
@@ -27,12 +35,23 @@ tensor_parallel_size=${#GPU_ARRAY[@]}
 
 # 遍历所有 LoRA 配置
 for config in "${lora_configs[@]}"; do
-    # 解析配置：格式为 "lorapath:test_datasets"
-    IFS=':' read -r lora_path test_datasets <<< "$config"
+    # 解析配置：格式为 "lorapath:test_datasets:step_type"
+    IFS=':' read -r lora_path test_datasets step_type <<< "$config"
     
-    if [ -z "$lora_path" ] || [ -z "$test_datasets" ]; then
+    if [ -z "$lora_path" ] || [ -z "$test_datasets" ] || [ -z "$step_type" ]; then
         echo "[ERROR] Invalid config format: ${config}"
-        echo "Expected format: lorapath:test_datasets"
+        echo "Expected format: lorapath:test_datasets:step_type"
+        continue
+    fi
+    
+    # 从 step_type 中提取 one 或 two
+    # onestep -> one, twostep -> two
+    if [[ "$step_type" == "onestep" ]]; then
+        step_prefix="one"
+    elif [[ "$step_type" == "twostep" ]]; then
+        step_prefix="two"
+    else
+        echo "[ERROR] Invalid step_type: ${step_type}. Expected 'onestep' or 'twostep'"
         continue
     fi
     
@@ -45,7 +64,7 @@ for config in "${lora_configs[@]}"; do
     # 从路径中提取标识符（倒数第二层目录名）
     # 例如: /path/to/0125_0336_ep10.0_lr1em4_r64/checkpoint-1410 -> 0125_0336_ep10.0_lr1em4_r64
     lora_identifier=$(basename "$(dirname "${lora_path}")")
-    output_dir_prefix="${PROJECT_DIR}/output/${types}/wo_align/${model_name}/${date_str}/${lora_identifier}"
+    output_dir_prefix="${PROJECT_DIR}/output/${types}/${model_name}/${step_prefix}/${date_str}/${lora_identifier}"
     
     # 生成统一的 date_str 用于本次评估
     eval_date_str=$(date +%m%d_%H%M)

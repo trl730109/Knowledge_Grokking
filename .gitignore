@@ -2,3 +2,5 @@ train_data/
 trained_models/
 tmp/
 datasets/
+output/
+lora_saved/

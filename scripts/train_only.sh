@@ -64,5 +64,5 @@ CUDA_VISIBLE_DEVICES=${cuda_devices} llamafactory-cli train \
     --num_train_epochs ${train_epochs} \
     --lr_scheduler_type cosine \
     --warmup_ratio 0.1 \
-    --bf16 \
+    --fp16 \
     --ddp_timeout 180000000
